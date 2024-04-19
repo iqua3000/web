@@ -39,10 +39,10 @@ class CompanyEn extends StatelessWidget {
                 ),
               ),
               ListTile(
-                title: Text("About Us"),
+                title: Text("Company"),
               ),
               ListTile(
-                title: Text("Studying Korea"),
+                title: Text("Jobs"),
               ),
               ListTile(
                 title: Text("University"),
@@ -53,18 +53,98 @@ class CompanyEn extends StatelessWidget {
                 },
               ),
               ListTile(
-                title: Text("App and online courses"),
+                title: Text("Community"),
               ),
               ListTile(
-                title: Text("Getting Academy Counseling"),
+                title: Text("Study cafe"),
                 onTap: () {},
               ),
             ],
           ),
         ),
-        body: Column(
+        body: ListView(
           children: [
-            // Tuti, 검색, 알림 화면
+            const SizedBox(height: 80),
+            Container(
+              alignment: Alignment.centerLeft,
+              margin: const EdgeInsets.only(left: 50),
+              child: Image.asset(
+                'images/iquainc.png',
+                scale: 4,
+              ),
+            ),
+            const SizedBox(height: 50),
+            Container(
+              alignment: Alignment.centerLeft,
+              margin: const EdgeInsets.only(left: 50),
+              child: Image.asset(
+                'images/aboutus.png',
+                scale: 4,
+              ),
+            ),
+            const SizedBox(height: 20),
+            Container(
+              alignment: Alignment.centerLeft,
+              margin: const EdgeInsets.fromLTRB(50, 0, 50, 0),
+              child: const Text(
+                  "Tuti is a platform that utilizes AI and big data technology to match domestic and international university students, universities, and companies."),
+            ),
+            const SizedBox(height: 50),
+            Container(
+              alignment: Alignment.centerLeft,
+              margin: const EdgeInsets.only(left: 50),
+              child: Image.asset(
+                'images/ourmission.png',
+                scale: 4,
+              ),
+            ),
+            const SizedBox(height: 20),
+            Container(
+              alignment: Alignment.centerLeft,
+              margin: const EdgeInsets.fromLTRB(50, 0, 50, 0),
+              child: const Text(
+                  "The Tuti platform was created with the goal of enabling anyone who wants to explore the world, regardless of race, education, or parental background, to be able to do so, targeting university students worldwide."),
+            ),
+            const SizedBox(height: 50),
+            Container(
+              alignment: Alignment.centerLeft,
+              margin: const EdgeInsets.only(left: 50),
+              child: Image.asset(
+                'images/whatwedo.png',
+                scale: 4,
+              ),
+            ),
+            const SizedBox(height: 20),
+            Container(
+              alignment: Alignment.bottomLeft,
+              margin: const EdgeInsets.fromLTRB(50, 0, 50, 0),
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Explore various global activities on tuti.",
+                    // style: TextStyle(
+                    //   fontWeight: FontWeight.bold,
+                    //   fontSize: 20,
+                    // ),
+                  ),
+                  Text(
+                    "We provide unique resources for growing into a global talent.",
+                    // style: TextStyle(
+                    //   fontWeight: FontWeight.bold,
+                    //   fontSize: 20,
+                    // ),
+                  ),
+                  Text(
+                    "We support optimal university and company matches considering individual preferences, inclinations, and situations, by applying AI technology to university programs and diverse company pools worldwide through our proprietary search engine.",
+                    // style: TextStyle(
+                    //   fontWeight: FontWeight.bold,
+                    //   fontSize: 20,
+                    // ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       );

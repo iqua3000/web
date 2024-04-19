@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -32,7 +31,7 @@ class HomeEn extends StatelessWidget {
                     backgroundImage: AssetImage('images/icon.png')),
                 accountName: Text(""),
                 accountEmail: Text(""),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(40.0),
@@ -40,11 +39,16 @@ class HomeEn extends StatelessWidget {
                   ),
                 ),
               ),
-              ListTile(
-                title: Text("About Us"),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/company-En');
+                },
+                child: ListTile(
+                  title: Text("Company"),
+                ),
               ),
               ListTile(
-                title: Text("Studying Korea"),
+                title: Text("Jobs"),
               ),
               ListTile(
                 title: Text("University"),
@@ -55,10 +59,10 @@ class HomeEn extends StatelessWidget {
                 },
               ),
               ListTile(
-                title: Text("App and online courses"),
+                title: Text("Community"),
               ),
               ListTile(
-                title: Text("Getting Academy Counseling"),
+                title: Text("Study cafe"),
                 onTap: () {},
               ),
             ],
@@ -106,7 +110,7 @@ class HomeEn extends StatelessWidget {
                       Container(
                         margin: const EdgeInsets.only(left: 20),
                         child: Text(
-                          "Studying Korea",
+                          "Jobs",
                           style: TextStyle(fontSize: 17),
                         ),
                       ),
@@ -129,7 +133,17 @@ class HomeEn extends StatelessWidget {
                         child: Container(
                           margin: const EdgeInsets.only(left: 20),
                           child: const Text(
-                            "Online courses",
+                            "Community",
+                            style: TextStyle(fontSize: 17),
+                          ),
+                        ),
+                        onTap: () {},
+                      ),
+                      GestureDetector(
+                        child: Container(
+                          margin: const EdgeInsets.only(left: 20),
+                          child: const Text(
+                            "Study cafe",
                             style: TextStyle(fontSize: 17),
                           ),
                         ),
