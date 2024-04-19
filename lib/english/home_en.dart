@@ -245,7 +245,7 @@ class HomeEn extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Are you looking for a unique experience\nfor students to expand their world\nand achieve their dreams? \u{1F393}\u{2728}",
+                          "Are you looking for a unique experience\nfor students to expand their world\nand achieve their dreams?",
                           style: TextStyle(
                             fontSize: 28,
                             color: Colors.white,
