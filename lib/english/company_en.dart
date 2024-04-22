@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CompanyEn extends StatelessWidget {
@@ -13,9 +12,14 @@ class CompanyEn extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.white,
           centerTitle: true,
-          title: Image.asset(
-            'images/tuti.png',
-            width: 90,
+          title: GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/home-En');
+            },
+            child: Image.asset(
+              'images/tuti.png',
+              width: 90,
+            ),
           ),
         ),
         drawer: Drawer(
@@ -27,10 +31,10 @@ class CompanyEn extends StatelessWidget {
               UserAccountsDrawerHeader(
                 currentAccountPicture: CircleAvatar(
                     backgroundColor: Colors.purple[50],
-                    backgroundImage: AssetImage('images/icon.png')),
-                accountName: Text(""),
-                accountEmail: Text(""),
-                decoration: BoxDecoration(
+                    backgroundImage: const AssetImage('images/icon.png')),
+                accountName: const Text(""),
+                accountEmail: const Text(""),
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(40.0),
@@ -38,10 +42,23 @@ class CompanyEn extends StatelessWidget {
                   ),
                 ),
               ),
-              ListTile(
-                title: Text("Company"),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/home-En');
+                },
+                child: const ListTile(
+                  title: Text("Home"),
+                ),
               ),
-              ListTile(
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/company-En');
+                },
+                child: const ListTile(
+                  title: Text("Company"),
+                ),
+              ),
+              const ListTile(
                 title: Text("Jobs"),
               ),
               ListTile(
@@ -52,12 +69,11 @@ class CompanyEn extends StatelessWidget {
                   // _launchInBrowswer(url);
                 },
               ),
-              ListTile(
+              const ListTile(
                 title: Text("Community"),
               ),
-              ListTile(
+              const ListTile(
                 title: Text("Study cafe"),
-                onTap: () {},
               ),
             ],
           ),
@@ -145,6 +161,22 @@ class CompanyEn extends StatelessWidget {
                 ],
               ),
             ),
+            const SizedBox(height: 50),
+            Container(
+              width: size.width,
+              margin: const EdgeInsets.only(bottom: 0),
+              child: Image.asset(
+                "images/map.png",
+                scale: 2.5,
+              ),
+            ),
+            Container(
+              alignment: Alignment.topRight,
+              child: const Text(
+                "Image copyright @rawpixel.com",
+                style: TextStyle(fontSize: 12),
+              ),
+            ),
           ],
         ),
       );
@@ -162,11 +194,16 @@ class CompanyEn extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Container(
-                        margin: const EdgeInsets.only(left: 30),
-                        child: Image.asset(
-                          'images/tuti.png',
-                          width: 90,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/home-En');
+                        },
+                        child: Container(
+                          margin: const EdgeInsets.only(left: 30),
+                          child: Image.asset(
+                            'images/tuti.png',
+                            width: 90,
+                          ),
                         ),
                       ),
                       GestureDetector(
@@ -366,6 +403,10 @@ class CompanyEn extends StatelessWidget {
                 "images/map.png",
                 scale: 2.5,
               ),
+            ),
+            Container(
+              alignment: Alignment.topRight,
+              child: const Text("Image copyright @rawpixel.com"),
             ),
           ],
         ),

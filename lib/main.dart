@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:iqua_web/china/company_simple.dart';
+import 'package:iqua_web/china/home_simple.dart';
 import 'package:iqua_web/english/company_en.dart';
 import 'package:iqua_web/english/home_en.dart';
 import 'package:iqua_web/home/company.dart';
@@ -46,9 +48,11 @@ class Tuti extends StatelessWidget {
         '/home': (context) => const Home(),
         '/home-En': (context) => const HomeEn(),
         '/home-Jp': (context) => const HomeJp(),
+        '/home-Simple': (context) => const HomeSimple(),
         '/company': (context) => const Company(),
         '/company-En': (context) => const CompanyEn(),
         '/company-Jp': (context) => const CompanyJp(),
+        '/company-Simple': (context) => const CompanySimple(),
         // '/webLogin': (context) => const WebLogin(),
         // '/webTabPage': (context) => const WebTabBarPage(),
         // '/webHome': (context) => const WebHome(),

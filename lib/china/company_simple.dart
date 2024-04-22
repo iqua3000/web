@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CompanyJp extends StatelessWidget {
-  const CompanyJp({super.key});
+class CompanySimple extends StatelessWidget {
+  const CompanySimple({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +14,7 @@ class CompanyJp extends StatelessWidget {
           centerTitle: true,
           title: GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, '/home-Jp');
+              Navigator.pushNamed(context, '/home-Simple');
             },
             child: Image.asset(
               'images/tuti.png',
@@ -43,23 +42,27 @@ class CompanyJp extends StatelessWidget {
                   ),
                 ),
               ),
-              ListTile(
-                title: const Text("홈"),
+              GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/home-Jp');
+                  Navigator.pushNamed(context, '/home-Simple');
                 },
+                child: const ListTile(
+                  title: Text("Home"),
+                ),
               ),
-              ListTile(
-                title: const Text("회사소개"),
+              GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/company-Jp');
+                  Navigator.pushNamed(context, '/company-Simple');
                 },
+                child: const ListTile(
+                  title: Text("Company"),
+                ),
               ),
               const ListTile(
-                title: Text("취업"),
+                title: Text("Jobs"),
               ),
               ListTile(
-                title: const Text("대학"),
+                title: Text("University"),
                 onTap: () async {
                   // Uri url = Uri.parse(
                   //     "https://iqua3000.github.io/tuti-frontend/#/webLogin");
@@ -67,10 +70,10 @@ class CompanyJp extends StatelessWidget {
                 },
               ),
               const ListTile(
-                title: Text("커뮤니티"),
+                title: Text("Community"),
               ),
               const ListTile(
-                title: Text("스터디카페"),
+                title: Text("Study cafe"),
               ),
             ],
           ),
@@ -100,7 +103,7 @@ class CompanyJp extends StatelessWidget {
               alignment: Alignment.centerLeft,
               margin: const EdgeInsets.fromLTRB(50, 0, 50, 0),
               child: const Text(
-                  "Tuti는 AI 및 빅데이터 기술을 활용하여 국내외 대학생 및 취준생을 위해 적합한 대학, 회사를 매칭시켜주는 플랫폼입니다."),
+                  "Tuti is a platform that utilizes AI and big data technology to match domestic and international university students, universities, and companies."),
             ),
             const SizedBox(height: 50),
             Container(
@@ -116,7 +119,7 @@ class CompanyJp extends StatelessWidget {
               alignment: Alignment.centerLeft,
               margin: const EdgeInsets.fromLTRB(50, 0, 50, 0),
               child: const Text(
-                  "Tuti 플랫폼은 인종 학력 부모와 상관없이 전세계 대학생들을 대상으로 넓은 세상을 탐험하고싶은 사람이라면 누구나 가능하게 하자는 목표로 탄생했습니다."),
+                  "The Tuti platform was created with the goal of enabling anyone who wants to explore the world, regardless of race, education, or parental background, to be able to do so, targeting university students worldwide."),
             ),
             const SizedBox(height: 50),
             Container(
@@ -135,21 +138,21 @@ class CompanyJp extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Tuti에서 다양한 분야의 글로벌 활동들을 알아보세요.",
+                    "Explore various global activities on tuti.",
                     // style: TextStyle(
                     //   fontWeight: FontWeight.bold,
                     //   fontSize: 20,
                     // ),
                   ),
                   Text(
-                    "글로벌 인재로 성장하기 위한 독보적 리소스를 제공해 드립니다.",
+                    "We provide unique resources for growing into a global talent.",
                     // style: TextStyle(
                     //   fontWeight: FontWeight.bold,
                     //   fontSize: 20,
                     // ),
                   ),
                   Text(
-                    "전세계의 대학 프로그램, 전세계의 다양한 회사 풀에 AI 기술을 적용하여, 개인의 희망진출지역, 성향, 상황을 고려한 최적의 대학교, 회사 매칭을 위한 자체 검색엔진 개발을 통해 지원합니다.",
+                    "We support optimal university and company matches considering individual preferences, inclinations, and situations, by applying AI technology to university programs and diverse company pools worldwide through our proprietary search engine.",
                     // style: TextStyle(
                     //   fontWeight: FontWeight.bold,
                     //   fontSize: 20,
@@ -193,7 +196,7 @@ class CompanyJp extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, '/home-Jp');
+                          Navigator.pushNamed(context, '/home-En');
                         },
                         child: Container(
                           margin: const EdgeInsets.only(left: 30),
@@ -205,12 +208,12 @@ class CompanyJp extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, '/company-Jp');
+                          Navigator.pushNamed(context, '/company-En');
                         },
                         child: Container(
                           margin: const EdgeInsets.only(left: 20),
                           child: Text(
-                            "会社紹介",
+                            "Company",
                             style: TextStyle(fontSize: 17),
                           ),
                         ),
@@ -218,7 +221,7 @@ class CompanyJp extends StatelessWidget {
                       Container(
                         margin: const EdgeInsets.only(left: 20),
                         child: Text(
-                          "Jobs",
+                          "Studying Korea",
                           style: TextStyle(fontSize: 17),
                         ),
                       ),
@@ -226,7 +229,7 @@ class CompanyJp extends StatelessWidget {
                         child: Container(
                           margin: const EdgeInsets.only(left: 20),
                           child: const Text(
-                            "大学",
+                            "University",
                             style: TextStyle(fontSize: 17),
                           ),
                         ),
@@ -241,17 +244,7 @@ class CompanyJp extends StatelessWidget {
                         child: Container(
                           margin: const EdgeInsets.only(left: 20),
                           child: const Text(
-                            "コミュニティ",
-                            style: TextStyle(fontSize: 17),
-                          ),
-                        ),
-                        onTap: () {},
-                      ),
-                      GestureDetector(
-                        child: Container(
-                          margin: const EdgeInsets.only(left: 20),
-                          child: const Text(
-                            "勉強カフェ",
+                            "Online courses",
                             style: TextStyle(fontSize: 17),
                           ),
                         ),
@@ -270,7 +263,7 @@ class CompanyJp extends StatelessWidget {
                           color: Colors.lightGreen[800]),
                       child: const Center(
                         child: Text(
-                          "Contact",
+                          "Getting Counseling",
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
@@ -334,7 +327,7 @@ class CompanyJp extends StatelessWidget {
               alignment: Alignment.bottomLeft,
               margin: const EdgeInsets.only(left: 90),
               child: const Text(
-                "Tutiは、人工知能およびビッグデータ技術を活用して、国内外の大学生、大学、企業をマッチングするプラットフォームです。",
+                "Tuti is a platform that utilizes AI and big data technology to match domestic and international university students, universities, and companies.",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
@@ -355,7 +348,7 @@ class CompanyJp extends StatelessWidget {
               alignment: Alignment.bottomLeft,
               margin: const EdgeInsets.only(left: 90),
               child: const Text(
-                "Tutiプラットフォームは、人種、教育、親の背景に関係なく、広い世界を探検したいと考える人々が可能になるよう目指して作られました。これは世界中の大学生を対象としています。",
+                "The Tuti platform was created with the goal of enabling anyone who wants to explore the world, regardless of race, education, or parental background, to be able to do so, targeting university students worldwide.",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
@@ -379,21 +372,21 @@ class CompanyJp extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Tutiでさまざまなグローバル活動を探索してください。",
+                    "Explore various global activities on tuti.",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
                     ),
                   ),
                   Text(
-                    "私たちはグローバルな才能に成長するためのユニークなリソースを提供します。",
+                    "We provide unique resources for growing into a global talent.",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
                     ),
                   ),
                   Text(
-                    "私たちはAI技術を世界中の大学プログラムと多様な企業プールに適用し、個々の希望、傾向、状況を考慮して、最適な大学と企業のマッチングをサポートします。",
+                    "We support optimal university and company matches considering individual preferences, inclinations, and situations, by applying AI technology to university programs and diverse company pools worldwide through our proprietary search engine.",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,

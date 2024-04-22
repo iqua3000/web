@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class HomeSimple extends StatelessWidget {
+  const HomeSimple({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,13 +41,13 @@ class Home extends StatelessWidget {
               ListTile(
                 title: const Text("홈"),
                 onTap: () {
-                  Navigator.pushNamed(context, '/home');
+                  Navigator.pushNamed(context, '/home-Simple');
                 },
               ),
               ListTile(
                 title: const Text("회사소개"),
                 onTap: () {
-                  Navigator.pushNamed(context, '/company');
+                  Navigator.pushNamed(context, '/company-Simple');
                 },
               ),
               const ListTile(
@@ -74,6 +74,12 @@ class Home extends StatelessWidget {
                 children: [
                   GestureDetector(
                       onTap: () {
+                        Navigator.pushNamed(context, "/home");
+                      },
+                      child: const Text("한국어")),
+                  const SizedBox(width: 10),
+                  GestureDetector(
+                      onTap: () {
                         Navigator.pushNamed(context, "/home-En");
                       },
                       child: const Text("English")),
@@ -85,8 +91,6 @@ class Home extends StatelessWidget {
                       child: const Text("日本語")),
                   const SizedBox(width: 10),
                   const Text("Tiếng Việt"),
-                  const SizedBox(width: 10),
-                  const Text("汉语（简体）"),
                   const SizedBox(width: 10),
                   const Text("中文（繁體）"),
                   const SizedBox(width: 10),
@@ -531,7 +535,7 @@ class Home extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, '/company');
+                          Navigator.pushNamed(context, '/company-Simple');
                         },
                         child: Container(
                           margin: const EdgeInsets.only(left: 20),
@@ -595,7 +599,7 @@ class Home extends StatelessWidget {
                           color: Colors.lightGreen[800]),
                       child: const Center(
                         child: Text(
-                          "상담받기",
+                          "Contact Us",
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
@@ -640,6 +644,12 @@ class Home extends StatelessWidget {
               children: [
                 GestureDetector(
                     onTap: () {
+                      Navigator.pushNamed(context, "/home");
+                    },
+                    child: const Text("한국어")),
+                const SizedBox(width: 10),
+                GestureDetector(
+                    onTap: () {
                       Navigator.pushNamed(context, "/home-Jp");
                     },
                     child: const Text("日本語")),
@@ -651,8 +661,6 @@ class Home extends StatelessWidget {
                     child: const Text("English")),
                 const SizedBox(width: 10),
                 const Text("Tiếng Việt"),
-                const SizedBox(width: 10),
-                const Text("汉语（简体）"),
                 const SizedBox(width: 10),
                 const Text("中文（繁體）"),
                 const SizedBox(width: 10),

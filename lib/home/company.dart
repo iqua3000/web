@@ -12,9 +12,14 @@ class Company extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.white,
           centerTitle: true,
-          title: Image.asset(
-            'images/tuti.png',
-            width: 90,
+          title: GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/home');
+            },
+            child: Image.asset(
+              'images/tuti.png',
+              width: 90,
+            ),
           ),
         ),
         drawer: Drawer(
@@ -26,10 +31,10 @@ class Company extends StatelessWidget {
               UserAccountsDrawerHeader(
                 currentAccountPicture: CircleAvatar(
                     backgroundColor: Colors.purple[50],
-                    backgroundImage: AssetImage('images/icon.png')),
-                accountName: Text(""),
-                accountEmail: Text(""),
-                decoration: BoxDecoration(
+                    backgroundImage: const AssetImage('images/icon.png')),
+                accountName: const Text(""),
+                accountEmail: const Text(""),
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(40.0),
@@ -38,32 +43,136 @@ class Company extends StatelessWidget {
                 ),
               ),
               ListTile(
-                title: Text("About Us"),
+                title: const Text("홈"),
+                onTap: () {
+                  Navigator.pushNamed(context, '/home');
+                },
               ),
               ListTile(
-                title: Text("Studying Korea"),
+                title: const Text("회사소개"),
+                onTap: () {
+                  Navigator.pushNamed(context, '/company');
+                },
+              ),
+              const ListTile(
+                title: Text("취업"),
               ),
               ListTile(
-                title: Text("University"),
+                title: const Text("대학"),
                 onTap: () async {
                   // Uri url = Uri.parse(
                   //     "https://iqua3000.github.io/tuti-frontend/#/webLogin");
                   // _launchInBrowswer(url);
                 },
               ),
-              ListTile(
-                title: Text("App and online courses"),
+              const ListTile(
+                title: Text("커뮤니티"),
               ),
-              ListTile(
-                title: Text("Getting Academy Counseling"),
-                onTap: () {},
+              const ListTile(
+                title: Text("스터디카페"),
               ),
             ],
           ),
         ),
-        body: Column(
+        body: ListView(
           children: [
-            // Tuti, 검색, 알림 화면
+            const SizedBox(height: 80),
+            Container(
+              alignment: Alignment.centerLeft,
+              margin: const EdgeInsets.only(left: 50),
+              child: Image.asset(
+                'images/iquainc.png',
+                scale: 4,
+              ),
+            ),
+            const SizedBox(height: 50),
+            Container(
+              alignment: Alignment.centerLeft,
+              margin: const EdgeInsets.only(left: 50),
+              child: Image.asset(
+                'images/aboutus.png',
+                scale: 4,
+              ),
+            ),
+            const SizedBox(height: 20),
+            Container(
+              alignment: Alignment.centerLeft,
+              margin: const EdgeInsets.fromLTRB(50, 0, 50, 0),
+              child: const Text(
+                  "Tuti는 AI 및 빅데이터 기술을 활용하여 국내외 대학생 및 취준생을 위해 적합한 대학, 회사를 매칭시켜주는 플랫폼입니다."),
+            ),
+            const SizedBox(height: 50),
+            Container(
+              alignment: Alignment.centerLeft,
+              margin: const EdgeInsets.only(left: 50),
+              child: Image.asset(
+                'images/ourmission.png',
+                scale: 4,
+              ),
+            ),
+            const SizedBox(height: 20),
+            Container(
+              alignment: Alignment.centerLeft,
+              margin: const EdgeInsets.fromLTRB(50, 0, 50, 0),
+              child: const Text(
+                  "Tuti 플랫폼은 인종 학력 부모와 상관없이 전세계 대학생들을 대상으로 넓은 세상을 탐험하고싶은 사람이라면 누구나 가능하게 하자는 목표로 탄생했습니다."),
+            ),
+            const SizedBox(height: 50),
+            Container(
+              alignment: Alignment.centerLeft,
+              margin: const EdgeInsets.only(left: 50),
+              child: Image.asset(
+                'images/whatwedo.png',
+                scale: 4,
+              ),
+            ),
+            const SizedBox(height: 20),
+            Container(
+              alignment: Alignment.bottomLeft,
+              margin: const EdgeInsets.fromLTRB(50, 0, 50, 0),
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Tuti에서 다양한 분야의 글로벌 활동들을 알아보세요.",
+                    // style: TextStyle(
+                    //   fontWeight: FontWeight.bold,
+                    //   fontSize: 20,
+                    // ),
+                  ),
+                  Text(
+                    "글로벌 인재로 성장하기 위한 독보적 리소스를 제공해 드립니다.",
+                    // style: TextStyle(
+                    //   fontWeight: FontWeight.bold,
+                    //   fontSize: 20,
+                    // ),
+                  ),
+                  Text(
+                    "전세계의 대학 프로그램, 전세계의 다양한 회사 풀에 AI 기술을 적용하여, 개인의 희망진출지역, 성향, 상황을 고려한 최적의 대학교, 회사 매칭을 위한 자체 검색엔진 개발을 통해 지원합니다.",
+                    // style: TextStyle(
+                    //   fontWeight: FontWeight.bold,
+                    //   fontSize: 20,
+                    // ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 50),
+            Container(
+              width: size.width,
+              margin: const EdgeInsets.only(bottom: 0),
+              child: Image.asset(
+                "images/map.png",
+                scale: 2.5,
+              ),
+            ),
+            Container(
+              alignment: Alignment.topRight,
+              child: const Text(
+                "Image copyright @rawpixel.com",
+                style: TextStyle(fontSize: 12),
+              ),
+            ),
           ],
         ),
       );
@@ -295,6 +404,10 @@ class Company extends StatelessWidget {
                 "images/map.png",
                 scale: 2.5,
               ),
+            ),
+            Container(
+              alignment: Alignment.topRight,
+              child: const Text("Image copyright @rawpixel.com"),
             ),
           ],
         ),
