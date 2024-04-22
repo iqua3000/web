@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iqua_web/component/launch_browswer.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:iqua_web/japan/contact_us_jp.dart';
+import 'package:iqua_web/japan/drawer_jp.dart';
 
 class HomeJp extends StatelessWidget {
   const HomeJp({super.key});
@@ -18,54 +19,116 @@ class HomeJp extends StatelessWidget {
             'images/tuti.png',
             width: 90,
           ),
-        ),
-        drawer: Drawer(
-          backgroundColor: Colors.white,
-          surfaceTintColor: Colors.white,
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              UserAccountsDrawerHeader(
-                currentAccountPicture: CircleAvatar(
-                    backgroundColor: Colors.purple[50],
-                    backgroundImage: const AssetImage('images/icon.png')),
-                accountName: const Text(""),
-                accountEmail: const Text(""),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(40.0),
-                    bottomRight: Radius.circular(40.0),
+          actions: <Widget>[
+            PopupMenuButton(
+              color: Colors.white,
+              surfaceTintColor: Colors.white,
+              child: Container(
+                alignment: Alignment.center,
+                width: 90,
+                height: 30,
+                margin: const EdgeInsets.only(right: 20),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12.0),
+                    color: Colors.lightGreen[800]),
+                child: const Center(
+                  child: Text(
+                    "お問い合わせ",
+                    style: TextStyle(color: Colors.white, fontSize: 13),
                   ),
                 ),
               ),
-              ListTile(
-                title: const Text("ホーム"),
-                onTap: () {
-                  Navigator.pushNamed(context, '/home-Jp');
-                },
-              ),
-              ListTile(
-                title: const Text("会社紹介"),
-                onTap: () {
-                  Navigator.pushNamed(context, '/company-Jp');
-                },
-              ),
-              const ListTile(
-                title: Text("就職"),
-              ),
-              const ListTile(
-                title: Text("大学"),
-              ),
-              const ListTile(
-                title: Text("コミュニティ"),
-              ),
-              const ListTile(
-                title: Text("スタディカフェ"),
-              ),
-            ],
-          ),
+              itemBuilder: (BuildContext context) {
+                return <PopupMenuEntry<String>>[
+                  PopupMenuItem(
+                    value: 'Instagram',
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 15,
+                          child: Image.asset(
+                            "images/instagram.png",
+                          ),
+                        ),
+                        const SizedBox(width: 5),
+                        const Text("インスタグラム"),
+                      ],
+                    ),
+                  ),
+                  PopupMenuItem(
+                    value: 'KakaoTalk',
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 15,
+                          child: Image.asset("images/kakaologo.png"),
+                        ),
+                        const SizedBox(width: 5),
+                        const Text("カカオトーク"),
+                      ],
+                    ),
+                  ),
+                  PopupMenuItem(
+                    value: 'Line',
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 15,
+                          child: Image.asset("images/line.png"),
+                        ),
+                        const SizedBox(width: 5),
+                        const Text("ライン"),
+                      ],
+                    ),
+                  ),
+                  PopupMenuItem(
+                    value: 'WeChat',
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 15,
+                          child: Image.asset("images/wechat.png"),
+                        ),
+                        const SizedBox(width: 5),
+                        const Text("WeChat"),
+                      ],
+                    ),
+                  ),
+                  const PopupMenuItem(
+                    value: 'email',
+                    child: Row(
+                      children: [
+                        Icon(Icons.email_outlined, size: 19),
+                        SizedBox(width: 5),
+                        Text("Eメール"),
+                      ],
+                    ),
+                  ),
+                ];
+              },
+              onSelected: (String value) async {
+                if (value == 'Instagram') {
+                  Uri url =
+                      Uri.parse("https://www.instagram.com/tuti_platform/");
+                  launchInBrowswer(url);
+                } else if (value == 'KakaoTalk') {
+                  Uri url = Uri.parse("https://pf.kakao.com/_jXxdxmG");
+                  launchInBrowswer(url);
+                } else if (value == 'Line') {
+                  Uri url = Uri.parse("");
+                  launchInBrowswer(url);
+                } else if (value == 'WeChat') {
+                  Uri url = Uri.parse("");
+                  launchInBrowswer(url);
+                } else if (value == 'email') {
+                  Uri url = Uri.parse("");
+                  launchInBrowswer(url);
+                }
+              },
+            ),
+          ],
         ),
+        drawer: const DrawerJp(),
         body: ListView(
           children: [
             Container(
@@ -85,15 +148,19 @@ class HomeJp extends StatelessWidget {
                       },
                       child: const Text("English")),
                   const SizedBox(width: 10),
-                  const Text("Tiếng Việt"),
-                  const SizedBox(width: 10),
-                  const Text("汉语（简体）"),
-                  const SizedBox(width: 10),
-                  const Text("中文（繁體）"),
-                  const SizedBox(width: 10),
-                  const Text("o'zbek"),
-                  const SizedBox(width: 10),
-                  const Text("Монгол"),
+                  // const Text("Tiếng Việt"),
+                  // const SizedBox(width: 10),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/home-Simple');
+                      },
+                      child: const Text("汉语（简体）")),
+                  // const SizedBox(width: 10),
+                  // const Text("中文（繁體）"),
+                  // const SizedBox(width: 10),
+                  // const Text("o'zbek"),
+                  // const SizedBox(width: 10),
+                  // const Text("Монгол"),
                   const SizedBox(width: 20),
                 ],
               ),
@@ -101,7 +168,7 @@ class HomeJp extends StatelessWidget {
             Stack(
               children: [
                 Container(
-                  color: Colors.pink[200],
+                  color: Colors.lightGreen[800],
                   width: size.width,
                   height: 200,
                 ),
@@ -149,7 +216,7 @@ class HomeJp extends StatelessWidget {
                 height: 30,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.0),
-                  color: Colors.pink[200],
+                  color: Colors.lightGreen[800],
                 ),
                 child: const Center(
                   child: Text(
@@ -597,42 +664,13 @@ class HomeJp extends StatelessWidget {
                           color: Colors.lightGreen[800]),
                       child: const Center(
                         child: Text(
-                          "Contact Us",
+                          "お問い合わせ",
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
                     ),
                     onTap: () async {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            backgroundColor: Colors.white,
-                            surfaceTintColor: Colors.white, // AlertDialog 배경색
-                            title: const Text('相談を受ける'),
-                            content: Container(
-                              height: 150,
-                              child: const Column(
-                                children: [
-                                  Text('Instagram'),
-                                  Text("カカオトーク"),
-                                  Text("Line"),
-                                  Text("WeChat"),
-                                  Text("Eメール"),
-                                ],
-                              ),
-                            ),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                                child: Text('Close'),
-                              ),
-                            ],
-                          );
-                        },
-                      );
+                      contactUsDialogJp(context);
                     },
                   ),
                 ],
@@ -653,15 +691,19 @@ class HomeJp extends StatelessWidget {
                     },
                     child: const Text("English")),
                 const SizedBox(width: 10),
-                const Text("Tiếng Việt"),
-                const SizedBox(width: 10),
-                const Text("汉语（简体）"),
-                const SizedBox(width: 10),
-                const Text("中文（繁體）"),
-                const SizedBox(width: 10),
-                const Text("o'zbek"),
-                const SizedBox(width: 10),
-                const Text("Монгол"),
+                // const Text("Tiếng Việt"),
+                // const SizedBox(width: 10),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/home-Simple');
+                    },
+                    child: const Text("汉语（简体）")),
+                // const SizedBox(width: 10),
+                // const Text("中文（繁體）"),
+                // const SizedBox(width: 10),
+                // const Text("o'zbek"),
+                // const SizedBox(width: 10),
+                // const Text("Монгол"),
                 const SizedBox(width: 30),
               ],
             ),
@@ -685,7 +727,7 @@ class HomeJp extends StatelessWidget {
             Stack(
               children: [
                 Container(
-                  color: Colors.pink[200],
+                  color: Colors.lightGreen[800],
                   width: size.width,
                   height: 400,
                 ),
@@ -739,7 +781,7 @@ class HomeJp extends StatelessWidget {
                 height: 40,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.0),
-                  color: Colors.pink[200],
+                  color: Colors.lightGreen[800],
                 ),
                 child: const Center(
                   child: Text(

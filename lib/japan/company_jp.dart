@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:iqua_web/japan/contact_us_jp.dart';
+import 'package:iqua_web/japan/drawer_jp.dart';
 
 class CompanyJp extends StatelessWidget {
   const CompanyJp({super.key});
@@ -23,54 +24,7 @@ class CompanyJp extends StatelessWidget {
             ),
           ),
         ),
-        drawer: Drawer(
-          backgroundColor: Colors.white,
-          surfaceTintColor: Colors.white,
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              UserAccountsDrawerHeader(
-                currentAccountPicture: CircleAvatar(
-                    backgroundColor: Colors.purple[50],
-                    backgroundImage: const AssetImage('images/icon.png')),
-                accountName: const Text(""),
-                accountEmail: const Text(""),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(40.0),
-                    bottomRight: Radius.circular(40.0),
-                  ),
-                ),
-              ),
-              ListTile(
-                title: const Text("홈"),
-                onTap: () {
-                  Navigator.pushNamed(context, '/home-Jp');
-                },
-              ),
-              ListTile(
-                title: const Text("회사소개"),
-                onTap: () {
-                  Navigator.pushNamed(context, '/company-Jp');
-                },
-              ),
-              const ListTile(
-                title: Text("취업"),
-              ),
-              ListTile(
-                title: const Text("대학"),
-                onTap: () async {},
-              ),
-              const ListTile(
-                title: Text("커뮤니티"),
-              ),
-              const ListTile(
-                title: Text("스터디카페"),
-              ),
-            ],
-          ),
-        ),
+        drawer: const DrawerJp(),
         body: ListView(
           children: [
             const SizedBox(height: 80),
@@ -96,7 +50,7 @@ class CompanyJp extends StatelessWidget {
               alignment: Alignment.centerLeft,
               margin: const EdgeInsets.fromLTRB(50, 0, 50, 0),
               child: const Text(
-                  "Tuti는 AI 및 빅데이터 기술을 활용하여 국내외 대학생 및 취준생을 위해 적합한 대학, 회사를 매칭시켜주는 플랫폼입니다."),
+                  "Tutiは、AIとビッグデータ技術を活用して、国内外の大学生や就学生に適した大学、会社をマッチングさせるプラットフォームです。"),
             ),
             const SizedBox(height: 50),
             Container(
@@ -112,7 +66,7 @@ class CompanyJp extends StatelessWidget {
               alignment: Alignment.centerLeft,
               margin: const EdgeInsets.fromLTRB(50, 0, 50, 0),
               child: const Text(
-                  "Tuti 플랫폼은 인종 학력 부모와 상관없이 전세계 대학생들을 대상으로 넓은 세상을 탐험하고싶은 사람이라면 누구나 가능하게 하자는 목표로 탄생했습니다."),
+                  "Tutiプラットフォームは、人種学歴の両親に関係なく、世界中の大学生を対象に広い世界を探索したい人なら誰でも可能にしようという目標として誕生しました。"),
             ),
             const SizedBox(height: 50),
             Container(
@@ -131,21 +85,21 @@ class CompanyJp extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Tuti에서 다양한 분야의 글로벌 활동들을 알아보세요.",
+                    "Tutiでさまざまな分野のグローバル活動を学びましょう。",
                     // style: TextStyle(
                     //   fontWeight: FontWeight.bold,
                     //   fontSize: 20,
                     // ),
                   ),
                   Text(
-                    "글로벌 인재로 성장하기 위한 독보적 리소스를 제공해 드립니다.",
+                    "グローバル人材に成長するための独自のリソースを提供します。",
                     // style: TextStyle(
                     //   fontWeight: FontWeight.bold,
                     //   fontSize: 20,
                     // ),
                   ),
                   Text(
-                    "전세계의 대학 프로그램, 전세계의 다양한 회사 풀에 AI 기술을 적용하여, 개인의 희망진출지역, 성향, 상황을 고려한 최적의 대학교, 회사 매칭을 위한 자체 검색엔진 개발을 통해 지원합니다.",
+                    "世界中の大学プログラム、世界中の様々な会社プールにAI技術を適用し、個人の希望進出地域、傾向、状況を考慮した最適な大学、会社マッチングのための自己検索エンジンの開発を通じて支援します。",
                     // style: TextStyle(
                     //   fontWeight: FontWeight.bold,
                     //   fontSize: 20,
@@ -214,7 +168,7 @@ class CompanyJp extends StatelessWidget {
                       Container(
                         margin: const EdgeInsets.only(left: 20),
                         child: Text(
-                          "Jobs",
+                          "就職",
                           style: TextStyle(fontSize: 17),
                         ),
                       ),
@@ -253,7 +207,7 @@ class CompanyJp extends StatelessWidget {
                   GestureDetector(
                     child: Container(
                       alignment: Alignment.center,
-                      width: 160,
+                      width: 100,
                       height: 30,
                       margin: const EdgeInsets.only(right: 20),
                       decoration: BoxDecoration(
@@ -261,42 +215,13 @@ class CompanyJp extends StatelessWidget {
                           color: Colors.lightGreen[800]),
                       child: const Center(
                         child: Text(
-                          "Contact",
+                          "お問い合わせ",
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
                     ),
                     onTap: () async {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            backgroundColor: Colors.white,
-                            surfaceTintColor: Colors.white, // AlertDialog 배경색
-                            title: const Text('상담받기'),
-                            content: Container(
-                              height: 150,
-                              child: const Column(
-                                children: [
-                                  Text('Instagram'),
-                                  Text("Kakao Talk"),
-                                  Text("Line"),
-                                  Text("WeChat"),
-                                  Text("E-mail"),
-                                ],
-                              ),
-                            ),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                                child: Text('Close'),
-                              ),
-                            ],
-                          );
-                        },
-                      );
+                      contactUsDialogJp(context);
                     },
                   ),
                 ],

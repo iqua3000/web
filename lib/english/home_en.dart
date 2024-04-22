@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:iqua_web/component/launch_browswer.dart';
 import 'package:iqua_web/english/contact_us_en.dart';
 import 'package:iqua_web/english/drawer_en.dart';
