@@ -29,13 +29,13 @@ class DrawerJp extends StatelessWidget {
           ListTile(
             title: const Text("ホーム"),
             onTap: () {
-              Navigator.pushNamed(context, '/home-En');
+              Navigator.pushNamed(context, '/home-Jp');
             },
           ),
           ListTile(
             title: const Text("会社紹介"),
             onTap: () {
-              Navigator.pushNamed(context, '/company-En');
+              Navigator.pushNamed(context, '/company-Jp');
             },
           ),
           const ListTile(

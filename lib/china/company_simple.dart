@@ -16,7 +16,7 @@ class CompanySimple extends StatelessWidget {
           centerTitle: true,
           title: GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, '/home-En');
+              Navigator.pushNamed(context, '/home-Simple');
             },
             child: Image.asset(
               'images/tuti.png',
