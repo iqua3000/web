@@ -701,7 +701,7 @@ class Home extends StatelessWidget {
                 // const SizedBox(width: 10),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, 'home-Simple');
+                    Navigator.pushNamed(context, '/home-Simple');
                   },
                   child: const Text("汉语（简体）"),
                 ),
