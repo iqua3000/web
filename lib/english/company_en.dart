@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:iqua_web/english/contact_us_en.dart';
+import 'package:iqua_web/english/drawer_en.dart';
 
 class CompanyEn extends StatelessWidget {
   const CompanyEn({super.key});
@@ -22,62 +24,7 @@ class CompanyEn extends StatelessWidget {
             ),
           ),
         ),
-        drawer: Drawer(
-          backgroundColor: Colors.white,
-          surfaceTintColor: Colors.white,
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              UserAccountsDrawerHeader(
-                currentAccountPicture: CircleAvatar(
-                    backgroundColor: Colors.purple[50],
-                    backgroundImage: const AssetImage('images/icon.png')),
-                accountName: const Text(""),
-                accountEmail: const Text(""),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(40.0),
-                    bottomRight: Radius.circular(40.0),
-                  ),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, '/home-En');
-                },
-                child: const ListTile(
-                  title: Text("Home"),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, '/company-En');
-                },
-                child: const ListTile(
-                  title: Text("Company"),
-                ),
-              ),
-              const ListTile(
-                title: Text("Jobs"),
-              ),
-              ListTile(
-                title: Text("University"),
-                onTap: () async {
-                  // Uri url = Uri.parse(
-                  //     "https://iqua3000.github.io/tuti-frontend/#/webLogin");
-                  // _launchInBrowswer(url);
-                },
-              ),
-              const ListTile(
-                title: Text("Community"),
-              ),
-              const ListTile(
-                title: Text("Study cafe"),
-              ),
-            ],
-          ),
-        ),
+        drawer: const DrawerEn(),
         body: ListView(
           children: [
             const SizedBox(height: 80),
@@ -221,7 +168,7 @@ class CompanyEn extends StatelessWidget {
                       Container(
                         margin: const EdgeInsets.only(left: 20),
                         child: Text(
-                          "Studying Korea",
+                          "Jobs",
                           style: TextStyle(fontSize: 17),
                         ),
                       ),
@@ -233,18 +180,23 @@ class CompanyEn extends StatelessWidget {
                             style: TextStyle(fontSize: 17),
                           ),
                         ),
-                        onTap: () async {
-                          // Uri url = Uri.parse(
-                          //     "https://iqua3000.github.io/tuti-frontend/#/webLogin");
-                          // _launchInBrowswer(url);
-                          // Navigator.pushNamed(context, '/webLogin');
-                        },
+                        onTap: () async {},
                       ),
                       GestureDetector(
                         child: Container(
                           margin: const EdgeInsets.only(left: 20),
                           child: const Text(
-                            "Online courses",
+                            "Community",
+                            style: TextStyle(fontSize: 17),
+                          ),
+                        ),
+                        onTap: () {},
+                      ),
+                      GestureDetector(
+                        child: Container(
+                          margin: const EdgeInsets.only(left: 20),
+                          child: const Text(
+                            "Study Cafe",
                             style: TextStyle(fontSize: 17),
                           ),
                         ),
@@ -255,7 +207,7 @@ class CompanyEn extends StatelessWidget {
                   GestureDetector(
                     child: Container(
                       alignment: Alignment.center,
-                      width: 160,
+                      width: 100,
                       height: 30,
                       margin: const EdgeInsets.only(right: 20),
                       decoration: BoxDecoration(
@@ -263,42 +215,13 @@ class CompanyEn extends StatelessWidget {
                           color: Colors.lightGreen[800]),
                       child: const Center(
                         child: Text(
-                          "Getting Counseling",
+                          "Contact Us",
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
                     ),
                     onTap: () async {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            backgroundColor: Colors.white,
-                            surfaceTintColor: Colors.white, // AlertDialog 배경색
-                            title: const Text('상담받기'),
-                            content: Container(
-                              height: 150,
-                              child: const Column(
-                                children: [
-                                  Text('Instagram'),
-                                  Text("Kakao Talk"),
-                                  Text("Line"),
-                                  Text("WeChat"),
-                                  Text("E-mail"),
-                                ],
-                              ),
-                            ),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                                child: Text('Close'),
-                              ),
-                            ],
-                          );
-                        },
-                      );
+                      contactUsDialogEn(context);
                     },
                   ),
                 ],
@@ -399,14 +322,18 @@ class CompanyEn extends StatelessWidget {
             Container(
               width: size.width,
               margin: const EdgeInsets.only(bottom: 0),
-              child: Image.asset(
-                "images/map.png",
-                scale: 2.5,
+              child: Column(
+                children: [
+                  Image.asset(
+                    "images/map.png",
+                    scale: 2.5,
+                  ),
+                  Container(
+                    alignment: Alignment.topRight,
+                    child: const Text("Image copyright @rawpixel.com"),
+                  ),
+                ],
               ),
-            ),
-            Container(
-              alignment: Alignment.topRight,
-              child: const Text("Image copyright @rawpixel.com"),
             ),
           ],
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iqua_web/component/launch_browswer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomeJp extends StatelessWidget {
@@ -246,7 +247,7 @@ class HomeJp extends StatelessWidget {
                     onTap: () async {
                       Uri url = Uri.parse(
                           "https://www.chf.or.kr/cont/view/fest/month/menu/210?thisPage=1&idx=109487&searchCategory1=600&searchCategory2=&searchCategory3=&searchField=all&searchDate=202404&weekSel=undefined&searchText=");
-                      _launchInBrowswer(url);
+                      launchInBrowswer(url);
                     },
                     child: Column(
                       children: [
@@ -314,7 +315,7 @@ class HomeJp extends StatelessWidget {
                     onTap: () async {
                       Uri url =
                           Uri.parse("https://www.k-illustrationfair.com/");
-                      _launchInBrowswer(url);
+                      launchInBrowswer(url);
                     },
                     child: Column(
                       children: [
@@ -381,7 +382,7 @@ class HomeJp extends StatelessWidget {
                   GestureDetector(
                     onTap: () async {
                       Uri url = Uri.parse("http://www.bba48.or.kr/");
-                      _launchInBrowswer(url);
+                      launchInBrowswer(url);
                     },
                     child: Column(
                       children: [
@@ -559,7 +560,7 @@ class HomeJp extends StatelessWidget {
                         onTap: () async {
                           Uri url = Uri.parse(
                               "https://iqua3000.github.io/tuti-frontend/#/webLogin");
-                          _launchInBrowswer(url);
+                          launchInBrowswer(url);
                           // Navigator.pushNamed(context, '/webLogin');
                         },
                       ),
@@ -829,7 +830,7 @@ class HomeJp extends StatelessWidget {
                   onTap: () async {
                     Uri url = Uri.parse(
                         "https://www.chf.or.kr/cont/view/fest/month/menu/210?thisPage=1&idx=109487&searchCategory1=600&searchCategory2=&searchCategory3=&searchField=all&searchDate=202404&weekSel=undefined&searchText=");
-                    _launchInBrowswer(url);
+                    launchInBrowswer(url);
                   },
                   child: Column(
                     children: [
@@ -895,7 +896,7 @@ class HomeJp extends StatelessWidget {
                 GestureDetector(
                   onTap: () async {
                     Uri url = Uri.parse("https://www.k-illustrationfair.com/");
-                    _launchInBrowswer(url);
+                    launchInBrowswer(url);
                   },
                   child: Column(
                     children: [
@@ -961,7 +962,7 @@ class HomeJp extends StatelessWidget {
                 GestureDetector(
                   onTap: () async {
                     Uri url = Uri.parse("http://www.bba48.or.kr/");
-                    _launchInBrowswer(url);
+                    launchInBrowswer(url);
                   },
                   child: Column(
                     children: [
@@ -1087,15 +1088,6 @@ class HomeJp extends StatelessWidget {
           ],
         ),
       );
-    }
-  }
-
-  Future<void> _launchInBrowswer(Uri url) async {
-    if (!await launchUrl(
-      url,
-      mode: LaunchMode.externalApplication,
-    )) {
-      throw Exception("Could not launch $url");
     }
   }
 }

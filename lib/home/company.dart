@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:iqua_web/home/contact_us_kr.dart';
+import 'package:iqua_web/home/drawer_kr.dart';
 
 class Company extends StatelessWidget {
   const Company({super.key});
@@ -22,58 +24,7 @@ class Company extends StatelessWidget {
             ),
           ),
         ),
-        drawer: Drawer(
-          backgroundColor: Colors.white,
-          surfaceTintColor: Colors.white,
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              UserAccountsDrawerHeader(
-                currentAccountPicture: CircleAvatar(
-                    backgroundColor: Colors.purple[50],
-                    backgroundImage: const AssetImage('images/icon.png')),
-                accountName: const Text(""),
-                accountEmail: const Text(""),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(40.0),
-                    bottomRight: Radius.circular(40.0),
-                  ),
-                ),
-              ),
-              ListTile(
-                title: const Text("홈"),
-                onTap: () {
-                  Navigator.pushNamed(context, '/home');
-                },
-              ),
-              ListTile(
-                title: const Text("회사소개"),
-                onTap: () {
-                  Navigator.pushNamed(context, '/company');
-                },
-              ),
-              const ListTile(
-                title: Text("취업"),
-              ),
-              ListTile(
-                title: const Text("대학"),
-                onTap: () async {
-                  // Uri url = Uri.parse(
-                  //     "https://iqua3000.github.io/tuti-frontend/#/webLogin");
-                  // _launchInBrowswer(url);
-                },
-              ),
-              const ListTile(
-                title: Text("커뮤니티"),
-              ),
-              const ListTile(
-                title: Text("스터디카페"),
-              ),
-            ],
-          ),
-        ),
+        drawer: const DrawerKR(),
         body: ListView(
           children: [
             const SizedBox(height: 80),
@@ -190,11 +141,16 @@ class Company extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Container(
-                        margin: const EdgeInsets.only(left: 30),
-                        child: Image.asset(
-                          'images/tuti.png',
-                          width: 90,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/home');
+                        },
+                        child: Container(
+                          margin: const EdgeInsets.only(left: 30),
+                          child: Image.asset(
+                            'images/tuti.png',
+                            width: 90,
+                          ),
                         ),
                       ),
                       GestureDetector(
@@ -224,12 +180,7 @@ class Company extends StatelessWidget {
                             style: TextStyle(fontSize: 17),
                           ),
                         ),
-                        onTap: () async {
-                          // Uri url = Uri.parse(
-                          //     "https://iqua3000.github.io/tuti-frontend/#/webLogin");
-                          // _launchInBrowswer(url);
-                          // Navigator.pushNamed(context, '/webLogin');
-                        },
+                        onTap: () async {},
                       ),
                       GestureDetector(
                         child: Container(
@@ -256,7 +207,7 @@ class Company extends StatelessWidget {
                   GestureDetector(
                     child: Container(
                       alignment: Alignment.center,
-                      width: 160,
+                      width: 100,
                       height: 30,
                       margin: const EdgeInsets.only(right: 20),
                       decoration: BoxDecoration(
@@ -264,42 +215,13 @@ class Company extends StatelessWidget {
                           color: Colors.lightGreen[800]),
                       child: const Center(
                         child: Text(
-                          "문의하기",
+                          "상담받기",
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
                     ),
                     onTap: () async {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            backgroundColor: Colors.white,
-                            surfaceTintColor: Colors.white, // AlertDialog 배경색
-                            title: const Text('상담받기'),
-                            content: Container(
-                              height: 150,
-                              child: const Column(
-                                children: [
-                                  Text('Instagram'),
-                                  Text("Kakao Talk"),
-                                  Text("Line"),
-                                  Text("WeChat"),
-                                  Text("E-mail"),
-                                ],
-                              ),
-                            ),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                                child: Text('Close'),
-                              ),
-                            ],
-                          );
-                        },
-                      );
+                      contactUsDialogKR(context);
                     },
                   ),
                 ],

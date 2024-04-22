@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:iqua_web/china/contact_us_simple.dart';
+import 'package:iqua_web/china/drawer_simple.dart';
 
 class CompanySimple extends StatelessWidget {
   const CompanySimple({super.key});
@@ -14,7 +16,7 @@ class CompanySimple extends StatelessWidget {
           centerTitle: true,
           title: GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, '/home-Simple');
+              Navigator.pushNamed(context, '/home-En');
             },
             child: Image.asset(
               'images/tuti.png',
@@ -22,62 +24,7 @@ class CompanySimple extends StatelessWidget {
             ),
           ),
         ),
-        drawer: Drawer(
-          backgroundColor: Colors.white,
-          surfaceTintColor: Colors.white,
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              UserAccountsDrawerHeader(
-                currentAccountPicture: CircleAvatar(
-                    backgroundColor: Colors.purple[50],
-                    backgroundImage: const AssetImage('images/icon.png')),
-                accountName: const Text(""),
-                accountEmail: const Text(""),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(40.0),
-                    bottomRight: Radius.circular(40.0),
-                  ),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, '/home-Simple');
-                },
-                child: const ListTile(
-                  title: Text("Home"),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, '/company-Simple');
-                },
-                child: const ListTile(
-                  title: Text("Company"),
-                ),
-              ),
-              const ListTile(
-                title: Text("Jobs"),
-              ),
-              ListTile(
-                title: Text("University"),
-                onTap: () async {
-                  // Uri url = Uri.parse(
-                  //     "https://iqua3000.github.io/tuti-frontend/#/webLogin");
-                  // _launchInBrowswer(url);
-                },
-              ),
-              const ListTile(
-                title: Text("Community"),
-              ),
-              const ListTile(
-                title: Text("Study cafe"),
-              ),
-            ],
-          ),
-        ),
+        drawer: const DrawerSimple(),
         body: ListView(
           children: [
             const SizedBox(height: 80),
@@ -102,8 +49,7 @@ class CompanySimple extends StatelessWidget {
             Container(
               alignment: Alignment.centerLeft,
               margin: const EdgeInsets.fromLTRB(50, 0, 50, 0),
-              child: const Text(
-                  "Tuti is a platform that utilizes AI and big data technology to match domestic and international university students, universities, and companies."),
+              child: const Text("Tuti是一个利用人工智能和大数据技术来匹配国内外大学生、大学和企业的平台。"),
             ),
             const SizedBox(height: 50),
             Container(
@@ -119,7 +65,7 @@ class CompanySimple extends StatelessWidget {
               alignment: Alignment.centerLeft,
               margin: const EdgeInsets.fromLTRB(50, 0, 50, 0),
               child: const Text(
-                  "The Tuti platform was created with the goal of enabling anyone who wants to explore the world, regardless of race, education, or parental background, to be able to do so, targeting university students worldwide."),
+                  "Tuti 平台的创建目标是让任何想要探索世界的人，无论种族、教育或父母背景如何，都能够这样做，目标是世界各地的大学生。"),
             ),
             const SizedBox(height: 50),
             Container(
@@ -138,21 +84,21 @@ class CompanySimple extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Explore various global activities on tuti.",
+                    "探索 tuti 上的各种全球活动。",
                     // style: TextStyle(
                     //   fontWeight: FontWeight.bold,
                     //   fontSize: 20,
                     // ),
                   ),
                   Text(
-                    "We provide unique resources for growing into a global talent.",
+                    "我们为成长为全球人才提供独特的资源。",
                     // style: TextStyle(
                     //   fontWeight: FontWeight.bold,
                     //   fontSize: 20,
                     // ),
                   ),
                   Text(
-                    "We support optimal university and company matches considering individual preferences, inclinations, and situations, by applying AI technology to university programs and diverse company pools worldwide through our proprietary search engine.",
+                    "我们通过我们专有的搜索引擎将人工智能技术应用于世界各地的大学项目和不同的公司池，考虑个人偏好、倾向和情况，支持最佳的大学和公司匹配。",
                     // style: TextStyle(
                     //   fontWeight: FontWeight.bold,
                     //   fontSize: 20,
@@ -185,7 +131,6 @@ class CompanySimple extends StatelessWidget {
         backgroundColor: Colors.white,
         body: ListView(
           children: [
-            // Tuti, 검색, 알림 화면
             Container(
               alignment: Alignment.center,
               height: 100,
@@ -196,7 +141,7 @@ class CompanySimple extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, '/home-En');
+                          Navigator.pushNamed(context, '/home-Simple');
                         },
                         child: Container(
                           margin: const EdgeInsets.only(left: 30),
@@ -208,12 +153,12 @@ class CompanySimple extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, '/company-En');
+                          Navigator.pushNamed(context, '/company-Simple');
                         },
                         child: Container(
                           margin: const EdgeInsets.only(left: 20),
                           child: Text(
-                            "Company",
+                            "公司",
                             style: TextStyle(fontSize: 17),
                           ),
                         ),
@@ -221,7 +166,7 @@ class CompanySimple extends StatelessWidget {
                       Container(
                         margin: const EdgeInsets.only(left: 20),
                         child: Text(
-                          "Studying Korea",
+                          "工作",
                           style: TextStyle(fontSize: 17),
                         ),
                       ),
@@ -229,22 +174,27 @@ class CompanySimple extends StatelessWidget {
                         child: Container(
                           margin: const EdgeInsets.only(left: 20),
                           child: const Text(
-                            "University",
+                            "大学",
                             style: TextStyle(fontSize: 17),
                           ),
                         ),
-                        onTap: () async {
-                          // Uri url = Uri.parse(
-                          //     "https://iqua3000.github.io/tuti-frontend/#/webLogin");
-                          // _launchInBrowswer(url);
-                          // Navigator.pushNamed(context, '/webLogin');
-                        },
+                        onTap: () async {},
                       ),
                       GestureDetector(
                         child: Container(
                           margin: const EdgeInsets.only(left: 20),
                           child: const Text(
-                            "Online courses",
+                            "社区",
+                            style: TextStyle(fontSize: 17),
+                          ),
+                        ),
+                        onTap: () {},
+                      ),
+                      GestureDetector(
+                        child: Container(
+                          margin: const EdgeInsets.only(left: 20),
+                          child: const Text(
+                            "学习咖啡厅",
                             style: TextStyle(fontSize: 17),
                           ),
                         ),
@@ -255,7 +205,7 @@ class CompanySimple extends StatelessWidget {
                   GestureDetector(
                     child: Container(
                       alignment: Alignment.center,
-                      width: 160,
+                      width: 100,
                       height: 30,
                       margin: const EdgeInsets.only(right: 20),
                       decoration: BoxDecoration(
@@ -263,42 +213,13 @@ class CompanySimple extends StatelessWidget {
                           color: Colors.lightGreen[800]),
                       child: const Center(
                         child: Text(
-                          "Getting Counseling",
+                          "联系我们",
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
                     ),
                     onTap: () async {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            backgroundColor: Colors.white,
-                            surfaceTintColor: Colors.white, // AlertDialog 배경색
-                            title: const Text('상담받기'),
-                            content: Container(
-                              height: 150,
-                              child: const Column(
-                                children: [
-                                  Text('Instagram'),
-                                  Text("Kakao Talk"),
-                                  Text("Line"),
-                                  Text("WeChat"),
-                                  Text("E-mail"),
-                                ],
-                              ),
-                            ),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                                child: Text('Close'),
-                              ),
-                            ],
-                          );
-                        },
-                      );
+                      contactUsDialogSimple(context);
                     },
                   ),
                 ],
@@ -327,7 +248,7 @@ class CompanySimple extends StatelessWidget {
               alignment: Alignment.bottomLeft,
               margin: const EdgeInsets.only(left: 90),
               child: const Text(
-                "Tuti is a platform that utilizes AI and big data technology to match domestic and international university students, universities, and companies.",
+                "Tuti是一个利用人工智能和大数据技术来匹配国内外大学生、大学和企业的平台。",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
@@ -348,7 +269,7 @@ class CompanySimple extends StatelessWidget {
               alignment: Alignment.bottomLeft,
               margin: const EdgeInsets.only(left: 90),
               child: const Text(
-                "The Tuti platform was created with the goal of enabling anyone who wants to explore the world, regardless of race, education, or parental background, to be able to do so, targeting university students worldwide.",
+                "Tuti 平台的创建目标是让任何想要探索世界的人，无论种族、教育或父母背景如何，都能够这样做，目标是世界各地的大学生。",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
@@ -372,21 +293,21 @@ class CompanySimple extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Explore various global activities on tuti.",
+                    "探索 tuti 上的各种全球活动。",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
                     ),
                   ),
                   Text(
-                    "We provide unique resources for growing into a global talent.",
+                    "我们为成长为全球人才提供独特的资源。",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
                     ),
                   ),
                   Text(
-                    "We support optimal university and company matches considering individual preferences, inclinations, and situations, by applying AI technology to university programs and diverse company pools worldwide through our proprietary search engine.",
+                    "我们通过我们专有的搜索引擎将人工智能技术应用于世界各地的大学项目和不同的公司池，考虑个人偏好、倾向和情况，支持最佳的大学和公司匹配。",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
@@ -399,14 +320,18 @@ class CompanySimple extends StatelessWidget {
             Container(
               width: size.width,
               margin: const EdgeInsets.only(bottom: 0),
-              child: Image.asset(
-                "images/map.png",
-                scale: 2.5,
+              child: Column(
+                children: [
+                  Image.asset(
+                    "images/map.png",
+                    scale: 2.5,
+                  ),
+                  Container(
+                    alignment: Alignment.topRight,
+                    child: const Text("Image copyright @rawpixel.com"),
+                  ),
+                ],
               ),
-            ),
-            Container(
-              alignment: Alignment.topRight,
-              child: const Text("Image copyright @rawpixel.com"),
             ),
           ],
         ),

@@ -60,11 +60,7 @@ class CompanyJp extends StatelessWidget {
               ),
               ListTile(
                 title: const Text("대학"),
-                onTap: () async {
-                  // Uri url = Uri.parse(
-                  //     "https://iqua3000.github.io/tuti-frontend/#/webLogin");
-                  // _launchInBrowswer(url);
-                },
+                onTap: () async {},
               ),
               const ListTile(
                 title: Text("커뮤니티"),
@@ -230,12 +226,7 @@ class CompanyJp extends StatelessWidget {
                             style: TextStyle(fontSize: 17),
                           ),
                         ),
-                        onTap: () async {
-                          // Uri url = Uri.parse(
-                          //     "https://iqua3000.github.io/tuti-frontend/#/webLogin");
-                          // _launchInBrowswer(url);
-                          // Navigator.pushNamed(context, '/webLogin');
-                        },
+                        onTap: () async {},
                       ),
                       GestureDetector(
                         child: Container(

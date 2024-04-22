@@ -1,5 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/widgets.dart';
+import 'package:iqua_web/component/launch_browswer.dart';
+import 'package:iqua_web/english/contact_us_en.dart';
+import 'package:iqua_web/english/drawer_en.dart';
 
 class HomeEn extends StatelessWidget {
   const HomeEn({super.key});
@@ -39,7 +43,7 @@ class HomeEn extends StatelessWidget {
               itemBuilder: (BuildContext context) {
                 return <PopupMenuEntry<String>>[
                   PopupMenuItem(
-                    value: 'item1',
+                    value: 'Instagram',
                     child: Row(
                       children: [
                         SizedBox(
@@ -54,7 +58,7 @@ class HomeEn extends StatelessWidget {
                     ),
                   ),
                   PopupMenuItem(
-                    value: 'item2',
+                    value: 'KakaoTalk',
                     child: Row(
                       children: [
                         SizedBox(
@@ -67,7 +71,7 @@ class HomeEn extends StatelessWidget {
                     ),
                   ),
                   PopupMenuItem(
-                    value: 'item3',
+                    value: 'Line',
                     child: Row(
                       children: [
                         SizedBox(
@@ -80,7 +84,7 @@ class HomeEn extends StatelessWidget {
                     ),
                   ),
                   PopupMenuItem(
-                    value: 'item4',
+                    value: 'WeChat',
                     child: Row(
                       children: [
                         SizedBox(
@@ -93,7 +97,7 @@ class HomeEn extends StatelessWidget {
                     ),
                   ),
                   const PopupMenuItem(
-                    value: 'item4',
+                    value: 'email',
                     child: Row(
                       children: [
                         Icon(Icons.email_outlined, size: 19),
@@ -105,75 +109,28 @@ class HomeEn extends StatelessWidget {
                 ];
               },
               onSelected: (String value) async {
-                if (value == 'item1') {
+                if (value == 'Instagram') {
+                  Uri url =
+                      Uri.parse("https://www.instagram.com/tuti_platform/");
+                  launchInBrowswer(url);
+                } else if (value == 'KakaoTalk') {
+                  Uri url = Uri.parse("https://pf.kakao.com/_jXxdxmG");
+                  launchInBrowswer(url);
+                } else if (value == 'Line') {
                   Uri url = Uri.parse("");
-                  _launchInBrowswer(url);
-                } else if (value == 'item2') {
+                  launchInBrowswer(url);
+                } else if (value == 'WeChat') {
                   Uri url = Uri.parse("");
-                  _launchInBrowswer(url);
-                } else if (value == 'item3') {
+                  launchInBrowswer(url);
+                } else if (value == 'email') {
                   Uri url = Uri.parse("");
-                  _launchInBrowswer(url);
-                } else if (value == 'item4') {
-                  Uri url = Uri.parse("");
-                  _launchInBrowswer(url);
+                  launchInBrowswer(url);
                 }
               },
             ),
           ],
         ),
-        drawer: Drawer(
-          backgroundColor: Colors.white,
-          surfaceTintColor: Colors.white,
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              UserAccountsDrawerHeader(
-                currentAccountPicture: CircleAvatar(
-                    backgroundColor: Colors.purple[50],
-                    backgroundImage: const AssetImage('images/icon.png')),
-                accountName: const Text(""),
-                accountEmail: const Text(""),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(40.0),
-                    bottomRight: Radius.circular(40.0),
-                  ),
-                ),
-              ),
-              ListTile(
-                title: const Text("Home"),
-                onTap: () {
-                  Navigator.pushNamed(context, '/home-En');
-                },
-              ),
-              ListTile(
-                title: const Text("Company"),
-                onTap: () {
-                  Navigator.pushNamed(context, '/company-En');
-                },
-              ),
-              const ListTile(
-                title: Text("Jobs"),
-              ),
-              ListTile(
-                title: const Text("University"),
-                onTap: () async {
-                  Uri url = Uri.parse(
-                      "https://iqua3000.github.io/tuti-frontend/#/webLogin");
-                  _launchInBrowswer(url);
-                },
-              ),
-              const ListTile(
-                title: Text("Community"),
-              ),
-              const ListTile(
-                title: Text("Study cafe"),
-              ),
-            ],
-          ),
-        ),
+        drawer: const DrawerEn(),
         body: ListView(
           children: [
             Container(
@@ -182,26 +139,33 @@ class HomeEn extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, "/home");
-                      },
-                      child: const Text("한국어")),
+                    onTap: () {
+                      Navigator.pushNamed(context, "/home");
+                    },
+                    child: const Text("한국어"),
+                  ),
                   const SizedBox(width: 10),
                   GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, "/home-Jp");
-                      },
-                      child: const Text("日本語")),
+                    onTap: () {
+                      Navigator.pushNamed(context, "/home-Jp");
+                    },
+                    child: const Text("日本語"),
+                  ),
+                  // const SizedBox(width: 10),
+                  // const Text("Tiếng Việt"),
                   const SizedBox(width: 10),
-                  const Text("Tiếng Việt"),
-                  const SizedBox(width: 10),
-                  const Text("汉语（简体）"),
-                  const SizedBox(width: 10),
-                  const Text("中文（繁體）"),
-                  const SizedBox(width: 10),
-                  const Text("o'zbek"),
-                  const SizedBox(width: 10),
-                  const Text("Монгол"),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, "/home-Simple");
+                    },
+                    child: const Text("汉语（简体）"),
+                  ),
+                  // const SizedBox(width: 10),
+                  // const Text("中文（繁體）"),
+                  // const SizedBox(width: 10),
+                  // const Text("o'zbek"),
+                  // const SizedBox(width: 10),
+                  // const Text("Монгол"),
                   const SizedBox(width: 20),
                 ],
               ),
@@ -209,7 +173,7 @@ class HomeEn extends StatelessWidget {
             Stack(
               children: [
                 Container(
-                  color: Colors.pink[200],
+                  color: Colors.lightGreen[800],
                   width: size.width,
                   height: 210,
                 ),
@@ -257,7 +221,7 @@ class HomeEn extends StatelessWidget {
                 height: 30,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.0),
-                  color: Colors.pink[200],
+                  color: Colors.lightGreen[800],
                 ),
                 child: const Center(
                   child: Text(
@@ -355,7 +319,7 @@ class HomeEn extends StatelessWidget {
                     onTap: () async {
                       Uri url = Uri.parse(
                           "https://www.chf.or.kr/cont/view/fest/month/menu/210?thisPage=1&idx=109487&searchCategory1=600&searchCategory2=&searchCategory3=&searchField=all&searchDate=202404&weekSel=undefined&searchText=");
-                      _launchInBrowswer(url);
+                      launchInBrowswer(url);
                     },
                     child: Column(
                       children: [
@@ -423,7 +387,7 @@ class HomeEn extends StatelessWidget {
                     onTap: () async {
                       Uri url =
                           Uri.parse("https://www.k-illustrationfair.com/");
-                      _launchInBrowswer(url);
+                      launchInBrowswer(url);
                     },
                     child: Column(
                       children: [
@@ -490,7 +454,7 @@ class HomeEn extends StatelessWidget {
                   GestureDetector(
                     onTap: () async {
                       Uri url = Uri.parse("http://www.bba48.or.kr/");
-                      _launchInBrowswer(url);
+                      launchInBrowswer(url);
                     },
                     child: Column(
                       children: [
@@ -668,7 +632,7 @@ class HomeEn extends StatelessWidget {
                         onTap: () async {
                           Uri url = Uri.parse(
                               "https://iqua3000.github.io/tuti-frontend/#/webLogin");
-                          _launchInBrowswer(url);
+                          launchInBrowswer(url);
                           // Navigator.pushNamed(context, '/webLogin');
                         },
                       ),
@@ -686,7 +650,7 @@ class HomeEn extends StatelessWidget {
                         child: Container(
                           margin: const EdgeInsets.only(left: 20),
                           child: const Text(
-                            "Study cafe",
+                            "Study Cafe",
                             style: TextStyle(fontSize: 17),
                           ),
                         ),
@@ -711,116 +675,7 @@ class HomeEn extends StatelessWidget {
                       ),
                     ),
                     onTap: () async {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            backgroundColor: Colors.white,
-                            surfaceTintColor: Colors.white, // AlertDialog 배경색
-                            title: const Text('Contact Us'),
-                            content: Container(
-                              height: 200,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      SizedBox(
-                                        width: 22,
-                                        child: Image.asset(
-                                          "images/instagram.png",
-                                        ),
-                                      ),
-                                      const SizedBox(width: 10),
-                                      const Text(
-                                        "Instagram",
-                                        style: TextStyle(fontSize: 20),
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(height: 10),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      SizedBox(
-                                        width: 22,
-                                        child: Image.asset(
-                                          "images/kakaologo.png",
-                                        ),
-                                      ),
-                                      const SizedBox(width: 10),
-                                      const Text(
-                                        "KakaoTalk",
-                                        style: TextStyle(fontSize: 20),
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(height: 10),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      SizedBox(
-                                        width: 22,
-                                        child: Image.asset(
-                                          "images/line.png",
-                                        ),
-                                      ),
-                                      const SizedBox(width: 10),
-                                      const Text(
-                                        "Line",
-                                        style: TextStyle(fontSize: 20),
-                                      ),
-                                      const SizedBox(width: 56),
-                                    ],
-                                  ),
-                                  const SizedBox(height: 10),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      SizedBox(
-                                        width: 22,
-                                        child: Image.asset(
-                                          "images/wechat.png",
-                                        ),
-                                      ),
-                                      const SizedBox(width: 10),
-                                      const Text(
-                                        "WeChat",
-                                        style: TextStyle(fontSize: 20),
-                                      ),
-                                      const SizedBox(width: 25),
-                                    ],
-                                  ),
-                                  const SizedBox(height: 10),
-                                  const Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      SizedBox(
-                                          width: 22,
-                                          child: Icon(Icons.email_outlined)),
-                                      SizedBox(width: 10),
-                                      Text(
-                                        "E-mail",
-                                        style: TextStyle(fontSize: 20),
-                                      ),
-                                      SizedBox(width: 40),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                                child: const Text('Close'),
-                              ),
-                            ],
-                          );
-                        },
-                      );
+                      contactUsDialogEn(context);
                     },
                   ),
                 ],
@@ -830,26 +685,33 @@ class HomeEn extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, "/home");
-                    },
-                    child: const Text("한국어")),
+                  onTap: () {
+                    Navigator.pushNamed(context, "/home");
+                  },
+                  child: const Text("한국어"),
+                ),
                 const SizedBox(width: 10),
                 GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, "/home-Jp");
-                    },
-                    child: const Text("日本語")),
+                  onTap: () {
+                    Navigator.pushNamed(context, "/home-Jp");
+                  },
+                  child: const Text("日本語"),
+                ),
+                // const SizedBox(width: 10),
+                // const Text("Tiếng Việt"),
                 const SizedBox(width: 10),
-                const Text("Tiếng Việt"),
-                const SizedBox(width: 10),
-                const Text("汉语（简体）"),
-                const SizedBox(width: 10),
-                const Text("中文（繁體）"),
-                const SizedBox(width: 10),
-                const Text("o'zbek"),
-                const SizedBox(width: 10),
-                const Text("Монгол"),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/home-Simple');
+                  },
+                  child: const Text("汉语（简体）"),
+                ),
+                // const SizedBox(width: 10),
+                // const Text("中文（繁體）"),
+                // const SizedBox(width: 10),
+                // const Text("o'zbek"),
+                // const SizedBox(width: 10),
+                // const Text("Монгол"),
                 const SizedBox(width: 30),
               ],
             ),
@@ -873,7 +735,7 @@ class HomeEn extends StatelessWidget {
             Stack(
               children: [
                 Container(
-                  color: Colors.pink[200],
+                  color: Colors.lightGreen[800],
                   width: size.width,
                   height: 400,
                 ),
@@ -926,7 +788,7 @@ class HomeEn extends StatelessWidget {
                 height: 40,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.0),
-                  color: Colors.pink[200],
+                  color: Colors.lightGreen[800],
                 ),
                 child: const Center(
                   child: Text(
@@ -1021,7 +883,7 @@ class HomeEn extends StatelessWidget {
                   onTap: () async {
                     Uri url = Uri.parse(
                         "https://www.chf.or.kr/cont/view/fest/month/menu/210?thisPage=1&idx=109487&searchCategory1=600&searchCategory2=&searchCategory3=&searchField=all&searchDate=202404&weekSel=undefined&searchText=");
-                    _launchInBrowswer(url);
+                    launchInBrowswer(url);
                   },
                   child: Column(
                     children: [
@@ -1088,7 +950,7 @@ class HomeEn extends StatelessWidget {
                 GestureDetector(
                   onTap: () async {
                     Uri url = Uri.parse("https://www.k-illustrationfair.com/");
-                    _launchInBrowswer(url);
+                    launchInBrowswer(url);
                   },
                   child: Column(
                     children: [
@@ -1155,7 +1017,7 @@ class HomeEn extends StatelessWidget {
                 GestureDetector(
                   onTap: () async {
                     Uri url = Uri.parse("http://www.bba48.or.kr/");
-                    _launchInBrowswer(url);
+                    launchInBrowswer(url);
                   },
                   child: Column(
                     children: [
@@ -1281,15 +1143,6 @@ class HomeEn extends StatelessWidget {
           ],
         ),
       );
-    }
-  }
-
-  Future<void> _launchInBrowswer(Uri url) async {
-    if (await launchUrl(
-      url,
-      mode: LaunchMode.externalApplication,
-    )) {
-      throw Exception("Could not launch $url");
     }
   }
 }

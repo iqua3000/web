@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:iqua_web/china/contact_us_simple.dart';
+import 'package:iqua_web/china/drawer_simple.dart';
+import 'package:iqua_web/component/launch_browswer.dart';
 
 class HomeSimple extends StatelessWidget {
   const HomeSimple({super.key});
@@ -17,54 +19,116 @@ class HomeSimple extends StatelessWidget {
             'images/tuti.png',
             width: 90,
           ),
-        ),
-        drawer: Drawer(
-          backgroundColor: Colors.white,
-          surfaceTintColor: Colors.white,
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              UserAccountsDrawerHeader(
-                currentAccountPicture: CircleAvatar(
-                    backgroundColor: Colors.purple[50],
-                    backgroundImage: const AssetImage('images/icon.png')),
-                accountName: const Text(""),
-                accountEmail: const Text(""),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(40.0),
-                    bottomRight: Radius.circular(40.0),
+          actions: <Widget>[
+            PopupMenuButton(
+              color: Colors.white,
+              surfaceTintColor: Colors.white,
+              child: Container(
+                alignment: Alignment.center,
+                width: 90,
+                height: 30,
+                margin: const EdgeInsets.only(right: 20),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12.0),
+                    color: Colors.lightGreen[800]),
+                child: const Center(
+                  child: Text(
+                    "联系我们",
+                    style: TextStyle(color: Colors.white, fontSize: 13),
                   ),
                 ),
               ),
-              ListTile(
-                title: const Text("홈"),
-                onTap: () {
-                  Navigator.pushNamed(context, '/home-Simple');
-                },
-              ),
-              ListTile(
-                title: const Text("회사소개"),
-                onTap: () {
-                  Navigator.pushNamed(context, '/company-Simple');
-                },
-              ),
-              const ListTile(
-                title: Text("취업"),
-              ),
-              const ListTile(
-                title: Text("대학"),
-              ),
-              const ListTile(
-                title: Text("커뮤니티"),
-              ),
-              const ListTile(
-                title: Text("스터디카페"),
-              ),
-            ],
-          ),
+              itemBuilder: (BuildContext context) {
+                return <PopupMenuEntry<String>>[
+                  PopupMenuItem(
+                    value: 'Instagram',
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 15,
+                          child: Image.asset(
+                            "images/instagram.png",
+                          ),
+                        ),
+                        const SizedBox(width: 5),
+                        const Text("Instagram"),
+                      ],
+                    ),
+                  ),
+                  PopupMenuItem(
+                    value: 'KakaoTalk',
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 15,
+                          child: Image.asset("images/kakaologo.png"),
+                        ),
+                        const SizedBox(width: 5),
+                        const Text("KakaoTalk"),
+                      ],
+                    ),
+                  ),
+                  PopupMenuItem(
+                    value: 'Line',
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 15,
+                          child: Image.asset("images/line.png"),
+                        ),
+                        const SizedBox(width: 5),
+                        const Text("Line"),
+                      ],
+                    ),
+                  ),
+                  PopupMenuItem(
+                    value: 'WeChat',
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 15,
+                          child: Image.asset("images/wechat.png"),
+                        ),
+                        const SizedBox(width: 5),
+                        const Text("WeChat"),
+                      ],
+                    ),
+                  ),
+                  const PopupMenuItem(
+                    value: 'email',
+                    child: Row(
+                      children: [
+                        Icon(Icons.email_outlined, size: 19),
+                        SizedBox(width: 5),
+                        Text("E-mail"),
+                      ],
+                    ),
+                  ),
+                ];
+              },
+              onSelected: (String value) async {
+                if (value == 'Instagram') {
+                  Uri url =
+                      Uri.parse("https://www.instagram.com/tuti_platform/");
+                  launchInBrowswer(url);
+                } else if (value == 'KakaoTalk') {
+                  Uri url = Uri.parse("https://pf.kakao.com/_jXxdxmG");
+                  launchInBrowswer(url);
+                } else if (value == 'Line') {
+                  Uri url = Uri.parse("");
+                  launchInBrowswer(url);
+                } else if (value == 'WeChat') {
+                  Uri url = Uri.parse("");
+                  launchInBrowswer(url);
+                } else if (value == 'email') {
+                  Uri url = Uri.parse("");
+                  launchInBrowswer(url);
+                }
+              },
+            ),
+          ],
         ),
+        drawer: const DrawerSimple(),
         body: ListView(
           children: [
             Container(
@@ -73,30 +137,33 @@ class HomeSimple extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, "/home");
-                      },
-                      child: const Text("한국어")),
+                    onTap: () {
+                      Navigator.pushNamed(context, "/home");
+                    },
+                    child: const Text("한국어"),
+                  ),
                   const SizedBox(width: 10),
                   GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, "/home-En");
-                      },
-                      child: const Text("English")),
+                    onTap: () {
+                      Navigator.pushNamed(context, "/home-En");
+                    },
+                    child: const Text("English"),
+                  ),
                   const SizedBox(width: 10),
                   GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, "/home-Jp");
-                      },
-                      child: const Text("日本語")),
-                  const SizedBox(width: 10),
-                  const Text("Tiếng Việt"),
-                  const SizedBox(width: 10),
-                  const Text("中文（繁體）"),
-                  const SizedBox(width: 10),
-                  const Text("o'zbek"),
-                  const SizedBox(width: 10),
-                  const Text("Монгол"),
+                    onTap: () {
+                      Navigator.pushNamed(context, "/home-Jp");
+                    },
+                    child: const Text("日本語"),
+                  ),
+                  // const SizedBox(width: 10),
+                  // const Text("Tiếng Việt"),
+                  // const SizedBox(width: 10),
+                  // const Text("中文（繁體）"),
+                  // const SizedBox(width: 10),
+                  // const Text("o'zbek"),
+                  // const SizedBox(width: 10),
+                  // const Text("Монгол"),
                   const SizedBox(width: 20),
                 ],
               ),
@@ -104,18 +171,18 @@ class HomeSimple extends StatelessWidget {
             Stack(
               children: [
                 Container(
-                  color: Colors.pink[200],
+                  color: Colors.lightGreen[800],
                   width: size.width,
-                  height: 230,
+                  height: 210,
                 ),
                 const SizedBox(
-                  height: 230,
+                  height: 210,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "특별한 경험을 찾고 계신가요?",
+                        "您在寻找独特的体验吗？",
                         style: TextStyle(
                           fontSize: 30,
                           color: Colors.white,
@@ -123,7 +190,7 @@ class HomeSimple extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "우리는 전세계의 대학생들을 위한 다양한 활동 프로그램을\n한 곳에서 소개하는 플랫폼입니다!\n다양한 분야에서 체험하고 배울 수 있는 프로그램들을 모았어요.\n지금 바로 저희 플랫폼을 방문하여 여러분의 꿈을 키우고\n더 넓은 세상을 만나보세요!",
+                        "我们是一个在一处为全球大学生介绍各种活动项目的平台！\n立即访问我们的平台来实现您的梦想！",
                         style: TextStyle(
                           fontSize: 20,
                           color: Colors.white,
@@ -138,7 +205,7 @@ class HomeSimple extends StatelessWidget {
             const SizedBox(height: 50),
             const Center(
               child: Text(
-                "등록할 준비가 되셨나요?",
+                "您准备好注册了吗？",
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
@@ -152,11 +219,11 @@ class HomeSimple extends StatelessWidget {
                 height: 30,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.0),
-                  color: Colors.pink[200],
+                  color: Colors.lightGreen[800],
                 ),
                 child: const Center(
                   child: Text(
-                    "지금 등록하기",
+                    "现在申请",
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -173,7 +240,7 @@ class HomeSimple extends StatelessWidget {
                 children: [
                   SizedBox(width: 30),
                   Text(
-                    "#교환학생",
+                    "#交换学生",
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -182,7 +249,7 @@ class HomeSimple extends StatelessWidget {
                   ),
                   SizedBox(width: 30),
                   Text(
-                    "#인턴쉽",
+                    "#实习",
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -191,7 +258,7 @@ class HomeSimple extends StatelessWidget {
                   ),
                   SizedBox(width: 30),
                   Text(
-                    "#글로벌교류",
+                    "#全球交流",
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -200,7 +267,7 @@ class HomeSimple extends StatelessWidget {
                   ),
                   SizedBox(width: 30),
                   Text(
-                    "#진로탐색",
+                    "#职业探索",
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -209,7 +276,7 @@ class HomeSimple extends StatelessWidget {
                   ),
                   SizedBox(width: 30),
                   Text(
-                    "#이력강화",
+                    "#强化简历",
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -217,15 +284,15 @@ class HomeSimple extends StatelessWidget {
                     ),
                   ),
                   SizedBox(width: 30),
-                  Text(
-                    "#국제봉사",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  SizedBox(width: 30),
+                  // SizedBox(width: 30),
+                  // Text(
+                  //   "#국제봉사",
+                  //   style: TextStyle(
+                  //     fontSize: 18,
+                  //     fontWeight: FontWeight.bold,
+                  //     color: Colors.grey,
+                  //   ),
+                  // ),
                 ],
               ),
             ),
@@ -250,7 +317,7 @@ class HomeSimple extends StatelessWidget {
                     onTap: () async {
                       Uri url = Uri.parse(
                           "https://www.chf.or.kr/cont/view/fest/month/menu/210?thisPage=1&idx=109487&searchCategory1=600&searchCategory2=&searchCategory3=&searchField=all&searchDate=202404&weekSel=undefined&searchText=");
-                      _launchInBrowswer(url);
+                      launchInBrowswer(url);
                     },
                     child: Column(
                       children: [
@@ -318,7 +385,7 @@ class HomeSimple extends StatelessWidget {
                     onTap: () async {
                       Uri url =
                           Uri.parse("https://www.k-illustrationfair.com/");
-                      _launchInBrowswer(url);
+                      launchInBrowswer(url);
                     },
                     child: Column(
                       children: [
@@ -385,7 +452,7 @@ class HomeSimple extends StatelessWidget {
                   GestureDetector(
                     onTap: () async {
                       Uri url = Uri.parse("http://www.bba48.or.kr/");
-                      _launchInBrowswer(url);
+                      launchInBrowswer(url);
                     },
                     child: Column(
                       children: [
@@ -475,7 +542,7 @@ class HomeSimple extends StatelessWidget {
                       children: [
                         SizedBox(height: 20),
                         Text(
-                          "(주) 이쿠아",
+                          "Iqua Inc.",
                           style: TextStyle(
                             fontSize: 16,
                             color: Colors.white,
@@ -483,21 +550,21 @@ class HomeSimple extends StatelessWidget {
                         ),
                         Text(""),
                         Text(
-                          "기업명      (주) 이쿠아",
+                          "Company    Iqua Inc.",
                           style: TextStyle(
                             fontSize: 16,
                             color: Colors.white,
                           ),
                         ),
                         Text(
-                          "주    소      서울 강남구 테헤란로22길 15, 2층",
+                          "Address      15, Teheran-ro 22-gil, Gangnam-gu,\n                     Seoul Republic of Korea",
                           style: TextStyle(
                             fontSize: 16,
                             color: Colors.white,
                           ),
                         ),
                         Text(
-                          "전    화      +82) 10.7415.8850",
+                          "Phone         +82) 10.7415.8850",
                           style: TextStyle(
                             fontSize: 16,
                             color: Colors.white,
@@ -540,38 +607,38 @@ class HomeSimple extends StatelessWidget {
                         child: Container(
                           margin: const EdgeInsets.only(left: 20),
                           child: Text(
-                            "회사소개",
+                            "公司",
                             style: TextStyle(fontSize: 17),
                           ),
                         ),
                       ),
                       Container(
-                        margin: const EdgeInsets.only(left: 25),
+                        margin: const EdgeInsets.only(left: 20),
                         child: Text(
-                          "취업",
+                          "工作",
                           style: TextStyle(fontSize: 17),
                         ),
                       ),
                       GestureDetector(
                         child: Container(
-                          margin: const EdgeInsets.only(left: 25),
+                          margin: const EdgeInsets.only(left: 20),
                           child: const Text(
-                            "대학",
+                            "大学",
                             style: TextStyle(fontSize: 17),
                           ),
                         ),
                         onTap: () async {
                           Uri url = Uri.parse(
                               "https://iqua3000.github.io/tuti-frontend/#/webLogin");
-                          _launchInBrowswer(url);
+                          launchInBrowswer(url);
                           // Navigator.pushNamed(context, '/webLogin');
                         },
                       ),
                       GestureDetector(
                         child: Container(
-                          margin: const EdgeInsets.only(left: 25),
+                          margin: const EdgeInsets.only(left: 20),
                           child: const Text(
-                            "커뮤니티",
+                            "社区",
                             style: TextStyle(fontSize: 17),
                           ),
                         ),
@@ -579,9 +646,9 @@ class HomeSimple extends StatelessWidget {
                       ),
                       GestureDetector(
                         child: Container(
-                          margin: const EdgeInsets.only(left: 25),
+                          margin: const EdgeInsets.only(left: 20),
                           child: const Text(
-                            "스터디카페",
+                            "学习咖啡厅",
                             style: TextStyle(fontSize: 17),
                           ),
                         ),
@@ -591,49 +658,22 @@ class HomeSimple extends StatelessWidget {
                   ),
                   GestureDetector(
                     child: Container(
+                      alignment: Alignment.center,
                       width: 100,
                       height: 30,
-                      margin: const EdgeInsets.only(right: 30),
+                      margin: const EdgeInsets.only(right: 20),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12.0),
                           color: Colors.lightGreen[800]),
                       child: const Center(
                         child: Text(
-                          "Contact Us",
+                          "联系我们",
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
                     ),
                     onTap: () async {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            backgroundColor: Colors.white,
-                            surfaceTintColor: Colors.white, // AlertDialog 배경색
-                            title: const Text('상담받기'),
-                            content: Container(
-                              height: 150,
-                              child: const Column(
-                                children: [
-                                  Text('인스타그램'),
-                                  Text("카카오톡"),
-                                  Text("라인"),
-                                  Text("이메일")
-                                ],
-                              ),
-                            ),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                                child: const Text('Close'),
-                              ),
-                            ],
-                          );
-                        },
-                      );
+                      contactUsDialogSimple(context);
                     },
                   ),
                 ],
@@ -643,30 +683,33 @@ class HomeSimple extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, "/home");
-                    },
-                    child: const Text("한국어")),
+                  onTap: () {
+                    Navigator.pushNamed(context, "/home");
+                  },
+                  child: const Text("한국어"),
+                ),
                 const SizedBox(width: 10),
                 GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, "/home-Jp");
-                    },
-                    child: const Text("日本語")),
+                  onTap: () {
+                    Navigator.pushNamed(context, "/home-En");
+                  },
+                  child: const Text("English"),
+                ),
                 const SizedBox(width: 10),
                 GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, "/home-En");
-                    },
-                    child: const Text("English")),
-                const SizedBox(width: 10),
-                const Text("Tiếng Việt"),
-                const SizedBox(width: 10),
-                const Text("中文（繁體）"),
-                const SizedBox(width: 10),
-                const Text("o'zbek"),
-                const SizedBox(width: 10),
-                const Text("Монгол"),
+                  onTap: () {
+                    Navigator.pushNamed(context, "/home-Jp");
+                  },
+                  child: const Text("日本語"),
+                ),
+                // const SizedBox(width: 10),
+                // const Text("Tiếng Việt"),
+                // const SizedBox(width: 10),
+                // const Text("中文（繁體）"),
+                // const SizedBox(width: 10),
+                // const Text("o'zbek"),
+                // const SizedBox(width: 10),
+                // const Text("Монгол"),
                 const SizedBox(width: 30),
               ],
             ),
@@ -690,9 +733,9 @@ class HomeSimple extends StatelessWidget {
             Stack(
               children: [
                 Container(
-                  color: Colors.pink[200],
+                  color: Colors.lightGreen[800],
                   width: size.width,
-                  height: 350,
+                  height: 300,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -700,9 +743,8 @@ class HomeSimple extends StatelessWidget {
                     const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 30),
                         Text(
-                          "세상을 넓히고 꿈을 이루는 학생들을 위한\n특별한 경험을 찾고 계신가요? \u{1F393}\u{2728}",
+                          "您是否正在为学生寻找独特的体验\n来拓展他们的世界并实现他们的梦想？",
                           style: TextStyle(
                             fontSize: 28,
                             color: Colors.white,
@@ -710,7 +752,7 @@ class HomeSimple extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          "우리는 전세계의 대학생들을 위한 다양한 활동 프로그램을\n한 곳에서 소개하는 플랫폼입니다! 🌍📚\n공부, 취업, 문화 교류, 봉사활동 등 다양한 분야에서\n체험하고 배울 수 있는 프로그램들을 모았어요.\n지금 바로 저희 플랫폼을 방문하여 여러분의 꿈을 키우고\n더 넓은 세상을 만나보세요! 💡💼",
+                          "我们是一个在一处为全球大学生\n介绍各种活动项目的平台！\n我们收集了可以让您在学习、就业、文化交流、\n志愿工作等各个领域体验和学习的项目。\n立即访问我们的平台，实现您的梦想，\n探索更广阔的世界！",
                           style: TextStyle(
                             fontSize: 22,
                             color: Colors.white,
@@ -730,7 +772,7 @@ class HomeSimple extends StatelessWidget {
             const SizedBox(height: 50),
             const Center(
               child: Text(
-                "등록할 준비가 되셨나요?",
+                "您准备好注册了吗？",
                 style: TextStyle(
                   fontSize: 45,
                   fontWeight: FontWeight.bold,
@@ -744,11 +786,11 @@ class HomeSimple extends StatelessWidget {
                 height: 40,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.0),
-                  color: Colors.pink[200],
+                  color: Colors.lightGreen[800],
                 ),
                 child: const Center(
                   child: Text(
-                    "지금 신청하세요",
+                    "现在申请",
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.white,
@@ -758,69 +800,73 @@ class HomeSimple extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 50),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "#교환학생",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey,
+            const SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(width: 30),
+                  Text(
+                    "#交换学生",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey,
+                    ),
                   ),
-                ),
-                SizedBox(width: 30),
-                Text(
-                  "#인턴쉽",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey,
+                  SizedBox(width: 30),
+                  Text(
+                    "#实习",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey,
+                    ),
                   ),
-                ),
-                SizedBox(width: 30),
-                Text(
-                  "#글로벌교류",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey,
+                  SizedBox(width: 30),
+                  Text(
+                    "#全球交流",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey,
+                    ),
                   ),
-                ),
-                SizedBox(width: 30),
-                Text(
-                  "#진로탐색",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey,
+                  SizedBox(width: 30),
+                  Text(
+                    "#职业探索",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey,
+                    ),
                   ),
-                ),
-                SizedBox(width: 30),
-                Text(
-                  "#이력강화",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey,
+                  SizedBox(width: 30),
+                  Text(
+                    "#强化简历",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey,
+                    ),
                   ),
-                ),
-                SizedBox(width: 30),
-                Text(
-                  "#국제봉사",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey,
-                  ),
-                ),
-              ],
+                  SizedBox(width: 30),
+                  // Text(
+                  //   "#국제봉사",
+                  //   style: TextStyle(
+                  //     fontSize: 18,
+                  //     fontWeight: FontWeight.bold,
+                  //     color: Colors.grey,
+                  //   ),
+                  // ),
+                ],
+              ),
             ),
             const SizedBox(height: 30),
             Container(
               margin: const EdgeInsets.only(left: 20),
               child: const Text(
-                "이벤트",
+                "Events",
                 style: TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.bold,
@@ -835,7 +881,7 @@ class HomeSimple extends StatelessWidget {
                   onTap: () async {
                     Uri url = Uri.parse(
                         "https://www.chf.or.kr/cont/view/fest/month/menu/210?thisPage=1&idx=109487&searchCategory1=600&searchCategory2=&searchCategory3=&searchField=all&searchDate=202404&weekSel=undefined&searchText=");
-                    _launchInBrowswer(url);
+                    launchInBrowswer(url);
                   },
                   child: Column(
                     children: [
@@ -898,10 +944,11 @@ class HomeSimple extends StatelessWidget {
                     ],
                   ),
                 ),
+                const SizedBox(width: 50),
                 GestureDetector(
                   onTap: () async {
                     Uri url = Uri.parse("https://www.k-illustrationfair.com/");
-                    _launchInBrowswer(url);
+                    launchInBrowswer(url);
                   },
                   child: Column(
                     children: [
@@ -964,10 +1011,11 @@ class HomeSimple extends StatelessWidget {
                     ],
                   ),
                 ),
+                const SizedBox(width: 50),
                 GestureDetector(
                   onTap: () async {
                     Uri url = Uri.parse("http://www.bba48.or.kr/");
-                    _launchInBrowswer(url);
+                    launchInBrowswer(url);
                   },
                   child: Column(
                     children: [
@@ -1056,7 +1104,7 @@ class HomeSimple extends StatelessWidget {
                       children: [
                         SizedBox(height: 50),
                         Text(
-                          "(주)이쿠아",
+                          "Iqua Inc.",
                           style: TextStyle(
                             fontSize: 20,
                             color: Colors.white,
@@ -1064,21 +1112,21 @@ class HomeSimple extends StatelessWidget {
                         ),
                         Text(""),
                         Text(
-                          "기업명   (주) 이쿠아",
+                          "Company    Iqua Inc.",
                           style: TextStyle(
                             fontSize: 20,
                             color: Colors.white,
                           ),
                         ),
                         Text(
-                          "주    소   서울 강남구 테헤란로22길 15, 2층",
+                          "Address      15, Teheran-ro 22-gil, Gangnam-gu, Seoul\n                     Republic of Korea",
                           style: TextStyle(
                             fontSize: 20,
                             color: Colors.white,
                           ),
                         ),
                         Text(
-                          "전    화   010.7415.8850",
+                          "Phone         +82) 10.7415.8850",
                           style: TextStyle(
                             fontSize: 20,
                             color: Colors.white,
@@ -1093,15 +1141,6 @@ class HomeSimple extends StatelessWidget {
           ],
         ),
       );
-    }
-  }
-
-  Future<void> _launchInBrowswer(Uri url) async {
-    if (!await launchUrl(
-      url,
-      mode: LaunchMode.externalApplication,
-    )) {
-      throw Exception("Could not launch $url");
     }
   }
 }
