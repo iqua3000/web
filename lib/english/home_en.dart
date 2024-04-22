@@ -94,7 +94,13 @@ class HomeEn extends StatelessWidget {
                   ),
                   const PopupMenuItem(
                     value: 'item4',
-                    child: Text("E-mail"),
+                    child: Row(
+                      children: [
+                        Icon(Icons.email_outlined, size: 19),
+                        SizedBox(width: 5),
+                        Text("E-mail"),
+                      ],
+                    ),
                   ),
                 ];
               },
@@ -713,7 +719,7 @@ class HomeEn extends StatelessWidget {
                             surfaceTintColor: Colors.white, // AlertDialog 배경색
                             title: const Text('Contact Us'),
                             content: Container(
-                              height: 180,
+                              height: 200,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
@@ -786,7 +792,21 @@ class HomeEn extends StatelessWidget {
                                       const SizedBox(width: 25),
                                     ],
                                   ),
-                                  Text("E-mail"),
+                                  const SizedBox(height: 10),
+                                  const Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SizedBox(
+                                          width: 22,
+                                          child: Icon(Icons.email_outlined)),
+                                      SizedBox(width: 10),
+                                      Text(
+                                        "E-mail",
+                                        style: TextStyle(fontSize: 20),
+                                      ),
+                                      SizedBox(width: 40),
+                                    ],
+                                  ),
                                 ],
                               ),
                             ),
