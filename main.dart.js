@@ -71318,7 +71318,7 @@ K(a){var s=null,r="images/tuti.png",q="images/iquainc.png",p="images/aboutus.png
 if(l<765)return A.eG(A.ml(s,B.i,!0,A.a7(s,A.a0(r,s,90),B.k,!1,s,s,s,s,s,s,s,s,s,s,s,s,s,s,new A.UA(a),s,s,s)),B.i,A.dz(A.a([B.fS,A.H(B.a1,A.a0(q,4,s),B.e,s,s,s,s,s,B.az,s,s,s,s),B.y,A.H(B.a1,A.a0(p,4,s),B.e,s,s,s,s,s,B.az,s,s,s,s),B.a4,A.H(B.a1,B.RN,B.e,s,s,s,s,s,B.b4,s,s,s,s),B.y,A.H(B.a1,A.a0(o,4,s),B.e,s,s,s,s,s,B.az,s,s,s,s),B.a4,A.H(B.a1,B.S4,B.e,s,s,s,s,s,B.b4,s,s,s,s),B.y,A.H(B.a1,A.a0(n,4,s),B.e,s,s,s,s,s,B.az,s,s,s,s),B.a4,A.H(B.I,B.BV,B.e,s,s,s,s,s,B.b4,s,s,s,s),B.y,A.H(s,A.a0(m,2.5,s),B.e,s,s,s,s,s,B.D,s,s,s,l),A.H(B.bN,B.h6,B.e,s,s,s,s,s,s,s,s,s,s)],k),s),B.lK)
 else return A.eG(s,B.i,A.dz(A.a([A.H(B.p,A.at(A.a([A.at(A.a([A.a7(s,A.H(s,A.a0(r,s,90),B.e,s,s,s,s,s,B.bW,s,s,s,s),B.k,!1,s,s,s,s,s,s,s,s,s,s,s,s,s,s,new A.UB(a),s,s,s),A.a7(s,A.H(s,A.fP("\u516c\u53f8",A.dG(s,s,s,s,s,s,s,s,s,s,s,17,s,s,s,s,s,!0,s,s,s,s,s,s,s,s)),B.e,s,s,s,s,s,B.z,s,s,s,s),B.k,!1,s,s,s,s,s,s,s,s,s,s,s,s,s,s,new A.UC(a),s,s,s),A.H(s,A.fP("\u5de5\u4f5c",A.dG(s,s,s,s,s,s,s,s,s,s,s,17,s,s,s,s,s,!0,s,s,s,s,s,s,s,s)),B.e,s,s,s,s,s,B.z,s,s,s,s),A.a7(s,A.H(s,B.h5,B.e,s,s,s,s,s,B.z,s,s,s,s),B.k,!1,s,s,s,s,s,s,s,s,s,s,s,s,s,s,new A.UD(),s,s,s),A.a7(s,A.H(s,B.xN,B.e,s,s,s,s,s,B.z,s,s,s,s),B.k,!1,s,s,s,s,s,s,s,s,s,s,s,s,s,s,new A.UE(),s,s,s),A.a7(s,A.H(s,B.xV,B.e,s,s,s,s,s,B.z,s,s,s,s),B.k,!1,s,s,s,s,s,s,s,s,s,s,s,s,s,s,new A.UF(),s,s,s)],k),B.j,B.n,B.h),A.a7(s,A.H(B.p,B.l9,B.e,s,s,new A.bO(B.W,s,s,A.d6(12),s,s,B.V),s,30,B.bq,s,s,s,100),B.k,!1,s,s,s,s,s,s,s,s,s,s,s,s,s,s,new A.UG(a),s,s,s)],k),B.j,B.an,B.h),B.e,s,s,s,s,100,s,s,s,s,s),B.fR,A.H(B.I,A.a0(q,2.5,s),B.e,s,s,s,s,s,B.X,s,s,s,s),B.aH,A.H(B.I,A.a0(p,2.5,s),B.e,s,s,s,s,s,B.X,s,s,s,s),B.a4,A.H(B.I,B.RV,B.e,s,s,s,s,s,B.X,s,s,s,s),B.aH,A.H(B.I,A.a0(o,2.5,s),B.e,s,s,s,s,s,B.X,s,s,s,s),B.a4,A.H(B.I,B.Rj,B.e,s,s,s,s,s,B.X,s,s,s,s),B.aH,A.H(B.I,A.a0(n,2.5,s),B.e,s,s,s,s,s,B.X,s,s,s,s),B.a4,A.H(B.I,B.BK,B.e,s,s,s,s,s,B.X,s,s,s,s),B.aH,A.H(s,A.c5(A.a([A.a0(m,2.5,s),A.H(B.bN,B.h4,B.e,s,s,s,s,s,s,s,s,s,s)],k),B.j,B.n,B.h),B.e,s,s,s,s,s,B.D,s,s,s,l)],k),s),s)}}
 A.UA.prototype={
-$0(){A.bk(this.a,"/home-En",t.X)},
+$0(){A.bk(this.a,"/home-Simple",t.X)},
 $S:0}
 A.UB.prototype={
 $0(){A.bk(this.a,"/home-Simple",t.X)},
@@ -71371,10 +71371,10 @@ $S:0}
 A.Ew.prototype={
 K(a){return A.Wf(B.i,A.dz(A.a([A.a8G(B.bd,B.bd,A.TX(B.eF,B.ev),B.ew),A.hR(new A.Wt(a),B.SD),A.hR(new A.Wu(a),B.Rd),B.Ea,B.mj,B.E7,B.E9,A.hR(new A.Wv(a),B.xB)],t.p),B.D),B.i)}}
 A.Wt.prototype={
-$0(){A.bk(this.a,"/home-En",t.X)},
+$0(){A.bk(this.a,"/home-Simple",t.X)},
 $S:0}
 A.Wu.prototype={
-$0(){A.bk(this.a,"/company-En",t.X)},
+$0(){A.bk(this.a,"/company-Simple",t.X)},
 $S:0}
 A.Wv.prototype={
 $0(){var s=0,r=A.E(t.H),q=this
@@ -71890,10 +71890,10 @@ $S:0}
 A.Eu.prototype={
 K(a){return A.Wf(B.i,A.dz(A.a([A.a8G(B.bd,B.bd,A.TX(B.eF,B.ev),B.ew),A.hR(new A.Wn(a),B.Rt),A.hR(new A.Wo(a),B.RH),B.E2,B.mj,B.E3,B.E8,A.hR(new A.Wp(a),B.y_)],t.p),B.D),B.i)}}
 A.Wn.prototype={
-$0(){A.bk(this.a,"/home-En",t.X)},
+$0(){A.bk(this.a,"/home-Jp",t.X)},
 $S:0}
 A.Wo.prototype={
-$0(){A.bk(this.a,"/company-En",t.X)},
+$0(){A.bk(this.a,"/company-Jp",t.X)},
 $S:0}
 A.Wp.prototype={
 $0(){var s=0,r=A.E(t.H),q=this
