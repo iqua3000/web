@@ -71809,7 +71809,7 @@ A.a_8.prototype={
 $0(){A.bk(this.a,"/home-En",t.X)},
 $S:0}
 A.a_9.prototype={
-$0(){A.bk(this.a,"home-Simple",t.X)},
+$0(){A.bk(this.a,"/home-Simple",t.X)},
 $S:0}
 A.a_a.prototype={
 $0(){var s=0,r=A.E(t.H)
