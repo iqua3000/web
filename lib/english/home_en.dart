@@ -203,6 +203,11 @@ class HomeEn extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 50),
+            Image.asset(
+              'images/worldmap2.png',
+              color: Colors.grey,
+            ),
+            const SizedBox(height: 50),
             const Center(
               child: Text(
                 "Are you ready to register?",
