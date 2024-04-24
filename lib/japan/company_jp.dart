@@ -16,7 +16,7 @@ class CompanyJp extends StatelessWidget {
           centerTitle: true,
           title: GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, '/home-Jp');
+              Navigator.pushNamed(context, '/home/jp');
             },
             child: Image.asset(
               'images/tuti.png',
@@ -143,7 +143,7 @@ class CompanyJp extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, '/home-Jp');
+                          Navigator.pushNamed(context, '/home/jp');
                         },
                         child: Container(
                           margin: const EdgeInsets.only(left: 30),
@@ -155,7 +155,7 @@ class CompanyJp extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, '/company-Jp');
+                          Navigator.pushNamed(context, '/company/jp');
                         },
                         child: Container(
                           margin: const EdgeInsets.only(left: 20),

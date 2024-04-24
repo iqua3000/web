@@ -29,13 +29,13 @@ class DrawerEn extends StatelessWidget {
           ListTile(
             title: const Text("Home"),
             onTap: () {
-              Navigator.pushNamed(context, '/home-En');
+              Navigator.pushNamed(context, '/home/en');
             },
           ),
           ListTile(
             title: const Text("Company"),
             onTap: () {
-              Navigator.pushNamed(context, '/company-En');
+              Navigator.pushNamed(context, '/company/en');
             },
           ),
           const ListTile(

@@ -145,7 +145,7 @@ class HomeEn extends StatelessWidget {
                   const SizedBox(width: 10),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, "/home-Jp");
+                      Navigator.pushNamed(context, "/home/jp");
                     },
                     child: const Text("日本語"),
                   ),
@@ -154,7 +154,7 @@ class HomeEn extends StatelessWidget {
                   const SizedBox(width: 10),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, "/home-Simple");
+                      Navigator.pushNamed(context, "/home/simple");
                     },
                     child: const Text("汉语（简体）"),
                   ),
@@ -203,10 +203,7 @@ class HomeEn extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 50),
-            Image.asset(
-              'images/worldmap2.png',
-              color: Colors.grey,
-            ),
+            Image.asset('images/worldmap1.png'),
             const SizedBox(height: 50),
             const Center(
               child: Text(
@@ -520,6 +517,74 @@ class HomeEn extends StatelessWidget {
                       ],
                     ),
                   ),
+                  const SizedBox(width: 50),
+                  GestureDetector(
+                    onTap: () async {
+                      Uri url = Uri.parse(
+                          "https://overseas.mofa.go.kr/pt-ko/brd/m_9320/view.do?seq=1345691");
+                      launchInBrowswer(url);
+                    },
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          width: 200,
+                          height: 295,
+                          child: Image.asset('images/kpop.jpg'),
+                        ),
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "2024 K-Pop 월드 페스티벌",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "장소 리스본 박물관",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "기간 6월 8일(토)",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "시간 오후 3시",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   const SizedBox(width: 30),
                 ],
               ),
@@ -607,7 +672,7 @@ class HomeEn extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, '/company-En');
+                          Navigator.pushNamed(context, '/company/en');
                         },
                         child: Container(
                           margin: const EdgeInsets.only(left: 20),
@@ -696,7 +761,7 @@ class HomeEn extends StatelessWidget {
                 const SizedBox(width: 10),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, "/home-Jp");
+                    Navigator.pushNamed(context, "/home/jp");
                   },
                   child: const Text("日本語"),
                 ),
@@ -705,7 +770,7 @@ class HomeEn extends StatelessWidget {
                 const SizedBox(width: 10),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, '/home-Simple');
+                    Navigator.pushNamed(context, '/home/simple');
                   },
                   child: const Text("汉语（简体）"),
                 ),
@@ -1062,6 +1127,74 @@ class HomeEn extends StatelessWidget {
                         width: 200,
                         child: Text(
                           "시간 오후 6시",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 200,
+                        child: Text(
+                          "",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(width: 50),
+                GestureDetector(
+                  onTap: () async {
+                    Uri url = Uri.parse(
+                        "https://overseas.mofa.go.kr/pt-ko/brd/m_9320/view.do?seq=1345691");
+                    launchInBrowswer(url);
+                  },
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        width: 200,
+                        height: 295,
+                        child: Image.asset('images/kpop.jpg'),
+                      ),
+                      const SizedBox(
+                        width: 200,
+                        child: Text(
+                          "2024 K-Pop 월드 페스티벌",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 200,
+                        child: Text(
+                          "장소 리스본 박물관",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 200,
+                        child: Text(
+                          "기간 6월 8일(토)",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 200,
+                        child: Text(
+                          "시간 오후 3시",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 12,
