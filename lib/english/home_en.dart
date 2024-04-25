@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:iqua_web/component/launch_browswer.dart';
 import 'package:iqua_web/english/contact_us_en.dart';
 import 'package:iqua_web/english/drawer_en.dart';
@@ -235,19 +234,25 @@ class HomeEn extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             Center(
-              child: Container(
-                width: 150,
-                height: 30,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.0),
-                  color: Colors.lightGreen[800],
-                ),
-                child: const Center(
-                  child: Text(
-                    "Apply now",
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
+              child: GestureDetector(
+                onTap: () {
+                  Uri url = Uri.parse("https://forms.gle/aB26KV4AiKn332cz7");
+                  launchInBrowswer(url);
+                },
+                child: Container(
+                  width: 150,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.lightGreen[800],
+                  ),
+                  child: const Center(
+                    child: Text(
+                      "Apply now",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -870,19 +875,25 @@ class HomeEn extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             Center(
-              child: Container(
-                width: 200,
-                height: 40,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.0),
-                  color: Colors.lightGreen[800],
-                ),
-                child: const Center(
-                  child: Text(
-                    "Apply now",
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.white,
+              child: GestureDetector(
+                onTap: () {
+                  Uri url = Uri.parse("https://forms.gle/aB26KV4AiKn332cz7");
+                  launchInBrowswer(url);
+                },
+                child: Container(
+                  width: 200,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.lightGreen[800],
+                  ),
+                  child: const Center(
+                    child: Text(
+                      "Apply now",
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),

@@ -231,19 +231,25 @@ class HomeJp extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             Center(
-              child: Container(
-                width: 150,
-                height: 30,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.0),
-                  color: Colors.lightGreen[800],
-                ),
-                child: const Center(
-                  child: Text(
-                    "今すぐ登録",
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
+              child: GestureDetector(
+                onTap: () {
+                  Uri url = Uri.parse("https://forms.gle/aB26KV4AiKn332cz7");
+                  launchInBrowswer(url);
+                },
+                child: Container(
+                  width: 150,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.lightGreen[800],
+                  ),
+                  child: const Center(
+                    child: Text(
+                      "今すぐ登録",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -859,19 +865,25 @@ class HomeJp extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             Center(
-              child: Container(
-                width: 200,
-                height: 40,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.0),
-                  color: Colors.lightGreen[800],
-                ),
-                child: const Center(
-                  child: Text(
-                    "今応募してください",
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.white,
+              child: GestureDetector(
+                onTap: () {
+                  Uri url = Uri.parse("https://forms.gle/aB26KV4AiKn332cz7");
+                  launchInBrowswer(url);
+                },
+                child: Container(
+                  width: 200,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.lightGreen[800],
+                  ),
+                  child: const Center(
+                    child: Text(
+                      "今応募してください",
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),

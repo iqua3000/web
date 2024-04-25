@@ -219,19 +219,25 @@ class Home extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             Center(
-              child: Container(
-                width: 150,
-                height: 30,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.0),
-                  color: Colors.lightGreen[800],
-                ),
-                child: const Center(
-                  child: Text(
-                    "지금 등록하기",
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
+              child: GestureDetector(
+                onTap: () {
+                  Uri url = Uri.parse("https://forms.gle/rmfDTTALSMHzTaEt8");
+                  launchInBrowswer(url);
+                },
+                child: Container(
+                  width: 150,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.lightGreen[800],
+                  ),
+                  child: const Center(
+                    child: Text(
+                      "지금 등록하기",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -852,19 +858,25 @@ class Home extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             Center(
-              child: Container(
-                width: 200,
-                height: 40,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.0),
-                  color: Colors.lightGreen[800],
-                ),
-                child: const Center(
-                  child: Text(
-                    "지금 신청하세요",
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.white,
+              child: GestureDetector(
+                onTap: () {
+                  Uri url = Uri.parse("https://forms.gle/rmfDTTALSMHzTaEt8");
+                  launchInBrowswer(url);
+                },
+                child: Container(
+                  width: 200,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.lightGreen[800],
+                  ),
+                  child: const Center(
+                    child: Text(
+                      "지금 신청하세요",
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
