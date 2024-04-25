@@ -800,51 +800,47 @@ class HomeEn extends StatelessWidget {
             //   ),
             // ),
             // 배너 회사 소개
-            Stack(
+            const Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
-                  color: Colors.lightGreen[800],
-                  width: size.width,
-                  height: 400,
+                SizedBox(height: 100),
+                Text(
+                  "Do you aspire to be a global leader of the future?",
+                  style: TextStyle(
+                    fontSize: 28,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Are you looking for a unique experience\nfor students to expand their world\nand achieve their dreams?",
-                          style: TextStyle(
-                            fontSize: 28,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          "We are a platform that introduces various\nactivity programs for college students around\nthe world in one place!\nWe have gathered programs that allow you\nto experience and learn in various fields\nsuch as study, employment, cultural exchange,\nand volunteer work.\nVisit our platform right now to grow your dreams\nand discover the wider world!",
-                          style: TextStyle(
-                            fontSize: 22,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Image.asset(
-                      'images/icon.png',
-                      scale: 2,
-                    ),
-                    const SizedBox(width: 30),
-                  ],
+                Text(
+                  "Are you, college students, ready to shine on the global stage?",
+                  style: TextStyle(
+                    fontSize: 22,
+                    color: Colors.black,
+                  ),
+                ),
+                Text(
+                  "Tuti's innovative AI education platform is the perfect companion",
+                  style: TextStyle(
+                    fontSize: 22,
+                    color: Colors.black,
+                  ),
+                ),
+                Text(
+                  "to transform you into a global talent. Inquire now!",
+                  style: TextStyle(
+                    fontSize: 22,
+                    color: Colors.black,
+                  ),
                 ),
               ],
             ),
-            const SizedBox(height: 50),
+            const SizedBox(height: 150),
             const Center(
               child: Text(
                 "Are you ready to register?",
                 style: TextStyle(
-                  fontSize: 45,
+                  fontSize: 40,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -921,18 +917,18 @@ class HomeEn extends StatelessWidget {
                     ),
                   ),
                   SizedBox(width: 30),
-                  // Text(
-                  //   "#국제봉사",
-                  //   style: TextStyle(
-                  //     fontSize: 18,
-                  //     fontWeight: FontWeight.bold,
-                  //     color: Colors.grey,
-                  //   ),
-                  // ),
+                  Text(
+                    "#GlobalVolunteer",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey,
+                    ),
+                  ),
                 ],
               ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 150),
             Container(
               margin: const EdgeInsets.only(left: 20),
               child: const Text(
