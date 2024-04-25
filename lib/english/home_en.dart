@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:iqua_web/component/launch_browswer.dart';
 import 'package:iqua_web/english/contact_us_en.dart';
 import 'package:iqua_web/english/drawer_en.dart';
@@ -793,7 +794,7 @@ class HomeEn extends StatelessWidget {
                     onTap: () {
                       Navigator.pushNamed(context, '/home/simple');
                     },
-                    child: const Text("汉语（简体）"),
+                    child: const Text("汉语(简体)"),
                   ),
                   // const SizedBox(width: 10),
                   // const Text("中文（繁體）"),
@@ -961,281 +962,285 @@ class HomeEn extends StatelessWidget {
                 ),
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const SizedBox(width: 30),
-                GestureDetector(
-                  onTap: () async {
-                    Uri url = Uri.parse(
-                        "https://www.chf.or.kr/cont/view/fest/month/menu/210?thisPage=1&idx=109487&searchCategory1=600&searchCategory2=&searchCategory3=&searchField=all&searchDate=202404&weekSel=undefined&searchText=");
-                    launchInBrowswer(url);
-                  },
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        width: 200,
-                        height: 300,
-                        child: Image.asset('images/moon.jpg'),
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        child: Text(
-                          "2024 창덕궁 달빛기행(상반기)",
-                          style: TextStyle(fontWeight: FontWeight.bold),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const SizedBox(width: 30),
+                  GestureDetector(
+                    onTap: () async {
+                      Uri url = Uri.parse(
+                          "https://www.chf.or.kr/cont/view/fest/month/menu/210?thisPage=1&idx=109487&searchCategory1=600&searchCategory2=&searchCategory3=&searchField=all&searchDate=202404&weekSel=undefined&searchText=");
+                      launchInBrowswer(url);
+                    },
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          width: 200,
+                          height: 300,
+                          child: Image.asset('images/moon.jpg'),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        child: Text(
-                          "장소 창덕궁",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                            color: Colors.grey,
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "2024 창덕궁 달빛기행(상반기)",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        child: Text(
-                          "기간 2024.4.11 ~ 2024.6.2",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                            color: Colors.grey,
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "장소 창덕궁",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
                           ),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        child: Text(
-                          "시간 (1부)19:20, 19:25, 19:30",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                            color: Colors.grey,
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "기간 2024.4.11 ~ 2024.6.2",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
                           ),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        child: Text(
-                          "        (2부)20:00, 20:05, 20:10",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                            color: Colors.grey,
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "시간 (1부)19:20, 19:25, 19:30",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "        (2부)20:00, 20:05, 20:10",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                const SizedBox(width: 50),
-                GestureDetector(
-                  onTap: () async {
-                    Uri url = Uri.parse("https://www.k-illustrationfair.com/");
-                    launchInBrowswer(url);
-                  },
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        width: 190,
-                        height: 300,
-                        child: Image.asset('images/seoul.jpg'),
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        child: Text(
-                          "K-일러스트레이션페어 부산 2024",
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                  const SizedBox(width: 40),
+                  GestureDetector(
+                    onTap: () async {
+                      Uri url =
+                          Uri.parse("https://www.k-illustrationfair.com/");
+                      launchInBrowswer(url);
+                    },
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          width: 190,
+                          height: 300,
+                          child: Image.asset('images/seoul.jpg'),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        child: Text(
-                          "장소 부산 벡스코 제2전시장 4홀",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                            color: Colors.grey,
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "K-일러스트레이션페어 부산 2024",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        child: Text(
-                          "기간 2024.7.26(금)~28(일)",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                            color: Colors.grey,
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "장소 부산 벡스코 제2전시장 4홀",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
                           ),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        child: Text(
-                          "시간 오전 11시 ~ 오후 6시",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                            color: Colors.grey,
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "기간 2024.7.26(금)~28(일)",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
                           ),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        child: Text(
-                          "",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                            color: Colors.grey,
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "시간 오전 11시 ~ 오후 6시",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                const SizedBox(width: 50),
-                GestureDetector(
-                  onTap: () async {
-                    Uri url = Uri.parse("http://www.bba48.or.kr/");
-                    launchInBrowswer(url);
-                  },
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        width: 200,
-                        height: 300,
-                        child: Image.asset('images/busan.jpg'),
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        child: Text(
-                          "부산연등회",
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                  const SizedBox(width: 40),
+                  GestureDetector(
+                    onTap: () async {
+                      Uri url = Uri.parse("http://www.bba48.or.kr/");
+                      launchInBrowswer(url);
+                    },
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          width: 200,
+                          height: 300,
+                          child: Image.asset('images/busan.jpg'),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        child: Text(
-                          "장소 송상현광장 및 부산시민공원 일원",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                            color: Colors.grey,
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "부산연등회",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        child: Text(
-                          "기간 2024.4.26 ~ 2024.5.12",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                            color: Colors.grey,
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "장소 송상현광장 및 부산시민공원 일원",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
                           ),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        child: Text(
-                          "시간 오후 6시",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                            color: Colors.grey,
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "기간 2024.4.26 ~ 2024.5.12",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
                           ),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        child: Text(
-                          "",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                            color: Colors.grey,
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "시간 오후 6시",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                const SizedBox(width: 50),
-                GestureDetector(
-                  onTap: () async {
-                    Uri url = Uri.parse(
-                        "https://overseas.mofa.go.kr/pt-ko/brd/m_9320/view.do?seq=1345691");
-                    launchInBrowswer(url);
-                  },
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        width: 200,
-                        height: 295,
-                        child: Image.asset('images/kpop.jpg'),
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        child: Text(
-                          "2024 K-Pop 월드 페스티벌",
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                  const SizedBox(width: 40),
+                  GestureDetector(
+                    onTap: () async {
+                      Uri url = Uri.parse(
+                          "https://overseas.mofa.go.kr/pt-ko/brd/m_9320/view.do?seq=1345691");
+                      launchInBrowswer(url);
+                    },
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          width: 200,
+                          height: 295,
+                          child: Image.asset('images/kpop.jpg'),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        child: Text(
-                          "장소 리스본 박물관",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                            color: Colors.grey,
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "2024 K-Pop 월드 페스티벌",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        child: Text(
-                          "기간 6월 8일(토)",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                            color: Colors.grey,
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "장소 리스본 박물관",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
                           ),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        child: Text(
-                          "시간 오후 3시",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                            color: Colors.grey,
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "기간 6월 8일(토)",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
                           ),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        child: Text(
-                          "",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                            color: Colors.grey,
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "시간 오후 3시",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                        const SizedBox(
+                          width: 200,
+                          child: Text(
+                            "",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                const SizedBox(width: 30),
-              ],
+                  const SizedBox(width: 30),
+                ],
+              ),
             ),
             const SizedBox(height: 50),
             Stack(

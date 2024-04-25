@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:iqua_web/component/launch_browswer.dart';
 import 'package:iqua_web/home/contact_us_kr.dart';
 import 'package:iqua_web/home/drawer_kr.dart';
@@ -680,7 +679,7 @@ class Home extends StatelessWidget {
                         },
                         child: Container(
                           margin: const EdgeInsets.only(left: 20),
-                          child: Text(
+                          child: const Text(
                             "회사소개",
                             style: TextStyle(fontSize: 17),
                           ),
@@ -688,7 +687,7 @@ class Home extends StatelessWidget {
                       ),
                       Container(
                         margin: const EdgeInsets.only(left: 25),
-                        child: Text(
+                        child: const Text(
                           "취업",
                           style: TextStyle(fontSize: 17),
                         ),
@@ -777,7 +776,7 @@ class Home extends StatelessWidget {
                     onTap: () {
                       Navigator.pushNamed(context, '/home/simple');
                     },
-                    child: const Text("汉语（简体）"),
+                    child: const Text("汉语(简体)"),
                   ),
                   // const SizedBox(width: 10),
                   // const Text("中文（繁體）"),
