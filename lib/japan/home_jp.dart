@@ -770,36 +770,40 @@ class HomeJp extends StatelessWidget {
                 ],
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, "/home");
-                    },
-                    child: const Text("한국어")),
-                const SizedBox(width: 10),
-                GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, "/home/en");
-                    },
-                    child: const Text("English")),
-                const SizedBox(width: 10),
-                // const Text("Tiếng Việt"),
-                // const SizedBox(width: 10),
-                GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/home/simple');
-                    },
-                    child: const Text("汉语(简体)")),
-                // const SizedBox(width: 10),
-                // const Text("中文（繁體）"),
-                // const SizedBox(width: 10),
-                // const Text("o'zbek"),
-                // const SizedBox(width: 10),
-                // const Text("Монгол"),
-                const SizedBox(width: 30),
-              ],
+            Container(
+              width: size.width,
+              color: Colors.grey[100],
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, "/home");
+                      },
+                      child: const Text("한국어")),
+                  const SizedBox(width: 10),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, "/home/en");
+                      },
+                      child: const Text("English")),
+                  const SizedBox(width: 10),
+                  // const Text("Tiếng Việt"),
+                  // const SizedBox(width: 10),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/home/simple');
+                      },
+                      child: const Text("汉语(简体)")),
+                  // const SizedBox(width: 10),
+                  // const Text("中文（繁體）"),
+                  // const SizedBox(width: 10),
+                  // const Text("o'zbek"),
+                  // const SizedBox(width: 10),
+                  // const Text("Монгол"),
+                  const SizedBox(width: 30),
+                ],
+              ),
             ),
             // 배너 광고 화면
             // Container(
