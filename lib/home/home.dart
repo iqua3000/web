@@ -157,7 +157,7 @@ class Home extends StatelessWidget {
                     onTap: () {
                       Navigator.pushNamed(context, '/home/simple');
                     },
-                    child: const Text("汉语（简体）"),
+                    child: const Text("汉语(简体)"),
                   ),
                   // const SizedBox(width: 10),
                   // const Text("中文（繁體）"),
@@ -169,46 +169,51 @@ class Home extends StatelessWidget {
                 ],
               ),
             ),
-            Stack(
-              children: [
-                Container(
-                  color: Colors.lightGreen[800],
-                  width: size.width,
-                  height: 230,
-                ),
-                const SizedBox(
-                  height: 230,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "특별한 경험을 찾고 계신가요?",
-                        style: TextStyle(
-                          fontSize: 30,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        "우리는 전세계의 대학생들을 위한 다양한 활동 프로그램을\n한 곳에서 소개하는 플랫폼입니다!\n다양한 분야에서 체험하고 배울 수 있는 프로그램들을 모았어요.\n지금 바로 저희 플랫폼을 방문하여 여러분의 꿈을 키우고\n더 넓은 세상을 만나보세요!",
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
+            const SizedBox(height: 30),
+            const SizedBox(
+              height: 230,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "미래의 글로벌 리더가 되고 싶은가요?",
+                    style: TextStyle(
+                      fontSize: 28,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                const SizedBox(width: 30),
-              ],
+                  Text(
+                    "대학생 여러분, 세계 무대에서 빛날 준비는 되셨나요?",
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black,
+                    ),
+                  ),
+                  Text(
+                    "트티의 혁신적인 AI 교육 플랫폼이 여러분을 글로벌 인재로",
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black,
+                    ),
+                  ),
+                  Text(
+                    "거듭나게 할 최적의 동반자입니다. 지금 바로 문의하세요!",
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
             ),
             const SizedBox(height: 50),
             const Center(
               child: Text(
                 "등록할 준비가 되셨나요?",
                 style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 26,
                   fontWeight: FontWeight.bold,
                 ),
               ),

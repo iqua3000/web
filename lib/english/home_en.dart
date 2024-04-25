@@ -156,7 +156,7 @@ class HomeEn extends StatelessWidget {
                     onTap: () {
                       Navigator.pushNamed(context, "/home/simple");
                     },
-                    child: const Text("汉语（简体）"),
+                    child: const Text("汉语(简体)"),
                   ),
                   // const SizedBox(width: 10),
                   // const Text("中文（繁體）"),
@@ -168,48 +168,66 @@ class HomeEn extends StatelessWidget {
                 ],
               ),
             ),
-            Stack(
-              children: [
-                Container(
-                  color: Colors.lightGreen[800],
-                  width: size.width,
-                  height: 210,
-                ),
-                const SizedBox(
-                  height: 210,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Are you looking for a unique experience?",
-                        style: TextStyle(
-                          fontSize: 30,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        "We are a platform that introduces various\nactivity programs for college students around\nthe world in one place!\nVisit our platform right now to grow your dreams!",
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
+            const SizedBox(height: 30),
+            const SizedBox(
+              height: 230,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Do you aspire to be a global leader",
+                    style: TextStyle(
+                      fontSize: 28,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                const SizedBox(width: 30),
-              ],
+                  Text(
+                    "of the future?",
+                    style: TextStyle(
+                      fontSize: 28,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    "Are you ready to shine on the global stage?",
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black,
+                    ),
+                  ),
+                  Text(
+                    "Tuti's innovative AI education platform is the perfect",
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black,
+                    ),
+                  ),
+                  Text(
+                    "companion to transform you into a global talent.",
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black,
+                    ),
+                  ),
+                  Text(
+                    "Inquire now!",
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
             ),
-            const SizedBox(height: 50),
-            Image.asset('images/worldmap1.png'),
             const SizedBox(height: 50),
             const Center(
               child: Text(
                 "Are you ready to register?",
                 style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 26,
                   fontWeight: FontWeight.bold,
                 ),
               ),
